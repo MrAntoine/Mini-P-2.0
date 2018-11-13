@@ -34,6 +34,28 @@ ob_start(); // Je démarre le buffer de sortie : les données à afficher sont s
 
 <body>
 
+
+<?php
+    if(!isset($_SESSION["id"])) {
+        // On n est pas connecté, il faut retourner à la pgae de login
+        header("Location:index.php?action=login");
+    }
+
+    // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
+    $ok = false;
+
+    if(!isset($_GET["id"]) || $_GET["id"]==$_SESSION["id"]))
+        $id = $_SESSION["id"];
+        $ok = true; // On a le droit d afficher notre mur
+    } else {
+        $id = $_GET["id"];
+        // Verifions si on est amis avec cette personne
+        $sql = "SELECT * FROM lien WHERE etat='ami'
+                AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
+
+?>
+
+
 <?php
 if (isset($_SESSION['info'])) {
     echo "<div class='alert alert-info alert-dismissible' role='alert'>
