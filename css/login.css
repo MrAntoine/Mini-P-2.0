@@ -1,0 +1,137 @@
+html {
+  font-family: Quicksand;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #b57600;
+}
+
+.wrapper {
+  margin: auto;
+  margin-top: 5%;
+  width: 500px;
+  height:auto;
+  padding: 0;
+  text-align: center;
+  /* background-color: #fff; */
+  border-radius: 10%;
+}
+
+.infos-menu{
+  display: none;
+}
+
+.Form{
+    width: 320px;
+    background: #fff;
+    color: #000;
+    position: relative;
+    margin-left: 90px;
+    /* transform: translate(-50%,-50%); */
+    box-sizing: border-box;
+    padding: 70px 30px;
+    display: block;
+    border-radius: 50px;
+}
+
+.form1 {
+  height: 270px;
+  /* border: 1px solid red; */
+}
+
+.form2 {
+  height: 350px;
+  padding-top: 20px;
+}
+
+
+.logo-form{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.Form p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.Form input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+form input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.Form input[type="text"], input[type="password"], input[type="email"], textarea
+{
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    /* background: transparent; */
+    background-color: #b57600;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.Form input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, textarea
+{
+  color : #fff;
+  opacity: 1;
+}
+
+.Form input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b57600;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    border-bottom: 1px solid #fff;
+}
+.Form input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+}
+.Form a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    /* color: darkgrey; */
+}
+.Form textarea {
+  margin-bottom: 20px;
+}
+.Form a:hover
+{
+    /* color: #ffc107; */
+}
+
+@media only screen and (max-width: 991px) {
+  .logo-form{
+    display: none;
+  }
+    .Form{
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,245 @@
+/* ~190 : ARTICLES*/
+
+
+
+* {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      vertical-align: baseline;
+      font-size: 100%;
+}
+
+html {
+  font-family: Quicksand;
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+body {
+      width: 100%;
+      background-image: url(img/bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+
+nav {
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    line-height: 60px;
+    margin-right: 1%;
+    display: inline;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(181, 118, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+    padding-right: 20%;
+}
+
+nav.black ul {
+    background: #b57600;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+.menuBurger {
+  margin-top: 0px;
+}
+
+.logo {
+  line-height: 60px;
+  position: fixed;
+  float: left;
+  margin: 16px 46px;
+  width: 50px;
+  height: auto;
+}
+
+.logoNav img{
+  width: 50px;
+  transition: transform 0.5s ease-out
+}
+
+.logoNav img:hover {
+  transform: rotate(360deg);
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+
+.scroll-line {
+     height: 5px;
+     border-radius: 5%;
+     margin-bottom: -2px;
+     background: #fff;
+     width: 0%;
+}
+
+.searchbox {
+  float: right;
+  z-index: 99;
+  position: fixed;
+  top: 40px;
+  left: 30%;
+}
+
+.searchbox input {
+  padding: 5px;
+  border-radius: 20px;
+}
+
+#searchGo{
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+#searchGo:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.searchIcon {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.navBar::after {
+      content: "";
+      clear: both;
+      display: table;
+}
+
+.header-toogle{
+  display: none;
+}
+
+.blackBack{
+    display:none;
+}
+
+.wrapper{
+  margin: auto;
+  margin-top: 10%;
+  width: 50%;
+  height: 1000px;
+  background-color: #b57600;
+  border: 7px solid #fff;
+  padding: 0;
+  text-align: center;
+}
+
+.avatar {
+  z-index: 100;
+  position: fixed;
+  top: 10px; left: 90px;
+  text-align: center;
+  text-decoration: none;
+  color : #b57600;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width : 200px;
+  height: 200px;
+  border : 5px solid #b57600;
+}
+
+.logoNav {
+  z-index: 100;
+  position: fixed;
+  top: 10px; right: 90px;
+  text-align: center;
+  text-decoration: none;
+  color : #b57600;
+
+}
+
+.logoNav img {
+  border-radius: 50%;
+  width : 200px;
+  height: 200px;
+  border : 5px solid #fff;
+  border-top: none;
+}
+
+
+/* sideFriends */
+
+.sideFriends {
+  position: fixed;
+  top: 40%;
+  left: 2.5%;
+  width: 20%;
+  background-color: #b57600;
+  padding: 5px;
+}
+
+.sideFriends ul li {
+  list-style: none;
+}
+
+
+
+
+/* ARTICLES */
+
+.article {
+  width: 90%;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid #fff;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #fff;
+
+}
+
+.img_article {
+  width: 100px;
+  height: 100px;
+  background-image: url(img/fleurs-bleuesv2.jpg);
+  float: left;
+  position: relative;
+  top: 0;
+
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+
+}
