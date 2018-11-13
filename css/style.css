@@ -106,7 +106,7 @@ nav ul li a:hover {
      height: 5px;
      border-radius: 5%;
      margin-bottom: -2px;
-     background: #fff;
+     background: #000;
      width: 0%;
 }
 
@@ -114,7 +114,7 @@ nav ul li a:hover {
   float: right;
   z-index: 99;
   position: fixed;
-  top: 40px;
+  top: 30px;
   left: 30%;
 }
 
@@ -158,11 +158,11 @@ nav ul li a:hover {
   margin: auto;
   margin-top: 10%;
   width: 50%;
-  height: 1000px;
   background-color: #b57600;
   border: 7px solid #fff;
   padding: 0;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .avatar {
@@ -196,7 +196,7 @@ nav ul li a:hover {
   width : 200px;
   height: 200px;
   border : 5px solid #fff;
-  border-top: none;
+  /* border-top: none; */
 }
 
 
@@ -227,7 +227,8 @@ nav ul li a:hover {
   margin: auto;
   margin-top: 30px;
   background-color: #fff;
-
+  text-align: left;
+  padding: 10px;
 }
 
 .img_article {
@@ -237,9 +238,21 @@ nav ul li a:hover {
   float: left;
   position: relative;
   top: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
   background-size: cover;
   border-radius: 50%;
   border: 2px solid #fff;
-
+}
+.nomPersonne {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #b57600;
+  padding: 3px;
+  color: black;
+}
+.date_article {
+  display: inline-block;
+  float: right;
 }
