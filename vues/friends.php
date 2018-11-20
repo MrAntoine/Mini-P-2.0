@@ -63,46 +63,55 @@
     </div>
 
     <div class="wrapper">
-        <div class="article margin anim">
+        <div class="friend margin anim">
             <div class="img_article"></div>
-            <a href="#" class="nomPersonne">
+            <a href="myProfile.php" class="nomPersonne">
               <p>NOM DE LA PERSONNE</p>
             </a>
-            <div class="date_article">24-08-1999</div>
-            <div class="article-corps anim">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="texte-article">
-            </div>
-          </div>
+
+
+            <input type="submit" name="delFriend" value="Refuser l'ami">
+            <input type="submit" name="acceptFriend" value="Accepter l'ami">
         </div>
 
-        <div class="article margin anim">
+        <div class="friend margin anim">
             <div class="img_article"></div>
-            <a href="#" class="nomPersonne">
+            <a href="myProfile.php" class="nomPersonne">
               <p>NOM DE LA PERSONNE</p>
             </a>
-            <div class="date_article">24-08-1999</div>
-            <div class="article-corps anim">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="texte-article">
-            </div>
-          </div>
+
+            <input type="submit" name="delFriend" value="Supprimer l'ami">
+
         </div>
-        <div class="article margin anim">
+        <div class="friend margin anim">
             <div class="img_article"></div>
-            <a href="#" class="nomPersonne">
+            <a href="myProfile.php" class="nomPersonne">
               <p>NOM DE LA PERSONNE</p>
             </a>
-            <div class="date_article">24-08-1999</div>
-            <div class="article-corps anim">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            <div class="texte-article">
-            </div>
-          </div>
+
+            <input type="submit" name="delFriend" value="Supprimer l'ami">
+
         </div>
+        <div class="friend margin anim">
+            <div class="img_article"></div>
+            <a href="myProfile.php" class="nomPersonne">
+              <p>NOM DE LA PERSONNE</p>
+            </a>
+
+            <input type="submit" name="delFriend" value="Supprimer l'ami">
+
+        </div>
+        <div class="friend margin anim">
+            <div class="img_article"></div>
+            <a href="myProfile.php" class="nomPersonne">
+              <p>NOM DE LA PERSONNE</p>
+            </a>
+
+            <input type="submit" name="delFriend" value="Supprimer l'ami">
+
+        </div>
+
+
       </div>
     </div>
 

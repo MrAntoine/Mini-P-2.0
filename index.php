@@ -26,7 +26,7 @@
 
 
 
-    <a href="#" class="avatar">
+    <a href="vues/myProfile.php" class="avatar">
       <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
       <p>Bonjour TOI !</p>
     </a>
@@ -65,6 +65,20 @@
 
 
     <div class="wrapper">
+      <div class="article margin">
+        <input type="text"
+               cols="40"
+               rows="2"
+               style="width:100%; height:50px;"
+               name="Text1"
+               id="Text1"
+               value=""
+               maxlength="150"
+               class="margin"
+               placeholder="Ecrivez votre post !" />
+               <input type="submit" name="writeMsg" value="Poster !" class="postMsg" >
+      </div><br/>
+      
         <div class="article margin anim">
             <div class="img_article"></div>
             <a href="#" class="nomPersonne">

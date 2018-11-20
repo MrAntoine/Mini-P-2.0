@@ -192,6 +192,11 @@ nav ul li a:hover {
   color : #b57600;
 }
 
+.avatar:hover {
+  color: #000;
+  text-decoration: none;
+}
+
 .avatar img {
   border-radius: 50%;
   width : 200px;
@@ -249,6 +254,29 @@ nav ul li a:hover {
   padding: 10px;
 }
 
+.postMsg {
+  float:right;
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding:5px;
+  background-color: #fff;
+  color: #000;
+  margin-right: 10px;
+}
+
+.comment {
+  border-top: 2px solid black;
+}
+
+.texte-article {
+  display: none;
+}
+
+.postMsg:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 .img_article {
   width: 100px;
   height: 100px;
@@ -267,10 +295,50 @@ nav ul li a:hover {
   display: inline-block;
   text-decoration: none;
   background-color: #b57600;
-  padding: 3px;
+  padding: 5px;
   color: black;
 }
 .date_article {
   display: inline-block;
   float: right;
+}
+
+
+.friend {
+  width: 90%;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid #fff;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #fff;
+  text-align: left;
+  padding: 10px;
+  height: 150px;
+}
+
+.friend .nomPersonne {
+  vertical-align: middle;
+    transition: 0.5s;
+    color: #000;
+}
+
+.friend .nomPersonne:hover {
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.friend input {
+  float: right;
+  background-color: #b57600;
+  color: #000;
+  padding: 5px;
+  text-transform: uppercase;
+  margin-right: 5px;
+  transition: 0.5s;
+}
+
+.friend input:hover {
+  background-color: #000;
+  color: #fff;
 }
