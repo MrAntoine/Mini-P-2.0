@@ -58,11 +58,10 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
 
         // Etape 1  : preparation
         $query = $pdo->prepare($sql);
-// Etape 2 : execution : 2 paramètres dans la requêtes !!
+        // Etape 2 : execution : 2 paramètres dans la requêtes !!
         $query->execute(array($id));
 
-// Etape 3 :
-
+        // Etape 3 :
         while($line = $query->fetch()) {
             echo "<div class='article margin anim'>";
             echo "<div class='img_article'></div>";
@@ -77,7 +76,6 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
             echo"</div>";
           echo"</div>";
         echo"</div>";
-
         }
 
     }
