@@ -1,3 +1,6 @@
+<!-- TEST 14h30-->
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -46,7 +49,7 @@
           <div class="menu">
                 <ul>
                   <li><a href="index.php">Accueil</a></li>
-                  <li><a href="About.html">Mon profil</a></li>
+                  <li><a href="vues/myProfile.php">Mon profil</a></li>
                   <li><a href="vues/friends.php">Mes amis</a></li>
                 </ul>
           </div>
