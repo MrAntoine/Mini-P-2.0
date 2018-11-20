@@ -56,7 +56,6 @@ if(!isset($_SESSION["id"])) {
 
 
 
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
