@@ -46,8 +46,8 @@
           <div class="menu">
                 <ul>
                   <li><a href="../index.php">Accueil</a></li>
-                  <li><a href="vues/myProfile.php">Mon profil</a></li>
-                  <li><a href="vues/friends.php">Mes amis</a></li>
+                  <li><a href="myProfile.php">Mon profil</a></li>
+                  <li><a href="friends.php">Mes amis</a></li>
                 </ul>
           </div>
           <div class="scroll-line"></div>
