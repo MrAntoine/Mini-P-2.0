@@ -6,9 +6,14 @@
  * Time: 14:24
  */
 
+
+$_SESSION["id"] = 1;
+$_SESSION["login"] = "gilles";
+
+
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
-    header("Location:index.php?action=login");
+    header("Location:exempleMur.html?action=login");
 }
 
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
@@ -54,12 +59,25 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
         // Etape 1  : preparation
         $query = $pdo->prepare($sql);
 // Etape 2 : execution : 2 paramètres dans la requêtes !!
-        $query->execute($id);
+        $query->execute(array($id));
 
 // Etape 3 :
 
         while($line = $query->fetch()) {
-            echo $line['contenu']."<br />";
+            echo "<div class='article margin anim'>";
+            echo "<div class='img_article'></div>";
+            echo "<a href='#' class='nomPersonne'>";
+            echo " <p> " . $line["idAuteur"] . "</p>";
+            echo "</a>";
+            echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
+            echo "<div class='article-corps anim'>";
+            echo"<p>". $line["titre"] ."</p>";
+            echo"<br><p>". $line["contenu"] ."</p>";
+            echo"<div class='texte-article'>";
+            echo"</div>";
+          echo"</div>";
+        echo"</div>";
+
         }
 
     }

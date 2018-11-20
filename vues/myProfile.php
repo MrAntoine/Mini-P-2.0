@@ -46,7 +46,7 @@
 
           <div class="menu">
                 <ul>
-                  <li><a href="../index.php">Accueil</a></li>
+                  <li><a href="../exempleMur.html">Accueil</a></li>
                   <li><a href="myProfile.php">Mon profil</a></li>
                   <li><a href="friends.php">Mes amis</a></li>
                 </ul>

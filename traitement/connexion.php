@@ -21,6 +21,6 @@ if($line == false){
 } else {
 	$_SESSION['id'] = $line['id']; 
 	$_SESSION['login']= $line['login'];
-	header("Location: index.php");
+	header("Location: exempleMur.html");
 }
 // sinon on crée les variables de session $_SESSION['id'] et $_SESSION['login'] et on va à la page d'accueil
