@@ -90,6 +90,19 @@ nav ul li a:hover {
   transform: rotate(360deg);
 }
 
+/* SIDEBAR RIGHT */
+
+.buttonsRight {
+  position: absolute;
+  top: 300px;
+  right: 90px;
+  display: none;
+  flex-direction: column;
+}
+.logoNav img:hover .buttonsRight {
+  display: flex;
+}
+
 .menu-icon {
       line-height: 60px;
       width: 100%;
@@ -152,6 +165,11 @@ nav ul li a:hover {
 
 .blackBack{
     display:none;
+}
+
+
+.buttonsRight a {
+  color: #000;
 }
 
 .wrapper{
