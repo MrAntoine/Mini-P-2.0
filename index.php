@@ -21,6 +21,8 @@
   </head>
   <body>
 
+
+
     <a href="#" class="avatar">
       <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
       <p>Bonjour TOI !</p>
@@ -44,21 +46,12 @@
           <div class="menu">
                 <ul>
                   <li><a href="index.html">Accueil</a></li>
-                  <li><a href="About.html">A Propos</a></li>
-                  <li><a href="Projects.html">Projets</a></li>
+                  <li><a href="About.html">Mon profil</a></li>
+                  <li><a href="Projects.html">Mes amis</a></li>
                 </ul>
           </div>
           <div class="scroll-line"></div>
     </nav>
-
-    <div class="sideFriends">
-      <ul>
-        <li>Un ami</li>
-        <li>Un ami2</li>
-        <li>Un ami3</li>
-        <li>Un ami4</li>
-      </ul>
-    </div>
 
     <div class="buttonsRight">
         <a href="#MES AMIS">Mes amis</a>

@@ -21,6 +21,8 @@
   </head>
   <body>
 
+
+
     <a href="#" class="avatar">
       <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
       <p>Bonjour TOI !</p>
@@ -44,8 +46,8 @@
           <div class="menu">
                 <ul>
                   <li><a href="index.html">Accueil</a></li>
-                  <li><a href="About.html">A Propos</a></li>
-                  <li><a href="Projects.html">Projets</a></li>
+                  <li><a href="About.html">Mon profil</a></li>
+                  <li><a href="Projects.html">Mon mur</a></li>
                 </ul>
           </div>
           <div class="scroll-line"></div>
