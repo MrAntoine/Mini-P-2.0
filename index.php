@@ -45,9 +45,9 @@
 
           <div class="menu">
                 <ul>
-                  <li><a href="index.html">Accueil</a></li>
+                  <li><a href="index.php">Accueil</a></li>
                   <li><a href="About.html">Mon profil</a></li>
-                  <li><a href="Projects.html">Mes amis</a></li>
+                  <li><a href="vues/friends.php">Mes amis</a></li>
                 </ul>
           </div>
           <div class="scroll-line"></div>

@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mon Super Facebook</title>
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="./css/ie10.css" rel="stylesheet">
+    <link href="../css/ie10.css" rel="stylesheet">
 
 
     <!-- Ma feuille de style à moi -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   </head>
@@ -24,10 +24,10 @@
 
 
     <a href="#" class="avatar">
-      <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
+      <img src="../img/fleurs-bleuesv2.jpg" alt="logo" >
       <p>Bonjour TOI !</p>
     </a>
-    <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
+    <a href="#" class="logoNav"><img src="../img/logoSite.png" class="lol"></a>
     <div class="searchbox">
       <form method="post">
         <input type="text" name="" placeholder="Type to search">
@@ -39,28 +39,21 @@
                 <i class="fa fa-bars fa-2x"></i>
           </div>
           <div class="header-toogle">
-                <a href="#nav" class="header-toogle-open"><img src="img/menu.png" width="30" alt="Ouvrir Menu"></a>
-                <a href="#" class="header-toogle-close"><img src="img/menu-close.png" width="30" alt="Fermer Menu"></a>
+                <a href="#nav" class="header-toogle-open"><img src="../img/menu.png" width="30" alt="Ouvrir Menu"></a>
+                <a href="#" class="header-toogle-close"><img src="../img/menu-close.png" width="30" alt="Fermer Menu"></a>
           </div>
 
           <div class="menu">
                 <ul>
-                  <li><a href="index.html">Accueil</a></li>
-                  <li><a href="About.html">Mon profil</a></li>
-                  <li><a href="Projects.html">Mon mur</a></li>
+                  <li><a href="../index.php">Accueil</a></li>
+                  <li><a href="vues/myProfile.php">Mon profil</a></li>
+                  <li><a href="vues/friends.php">Mes amis</a></li>
                 </ul>
           </div>
           <div class="scroll-line"></div>
     </nav>
 
-    <div class="sideFriends">
-      <ul>
-        <li>Un ami</li>
-        <li>Un ami2</li>
-        <li>Un ami3</li>
-        <li>Un ami4</li>
-      </ul>
-    </div>
+
 
     <div class="buttonsRight">
         <a href="#MES AMIS">Mes amis</a>
@@ -68,7 +61,6 @@
         <a href="#MON COMPTE">Mon compte</a>
         <a href="#DECONNEXION">Deconnexion</a>
     </div>
-
 
     <div class="wrapper">
         <div class="article margin anim">
