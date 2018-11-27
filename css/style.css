@@ -342,3 +342,12 @@ nav ul li a:hover {
   background-color: #000;
   color: #fff;
 }
+
+footer {
+  width: 30%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  margin-left: 35%;
+  font-weight: lighter;
+}

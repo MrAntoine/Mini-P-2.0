@@ -20,9 +20,9 @@
 
         <div class="menu">
               <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="About.html">A Propos</a></li>
-                <li><a href="Projects.html">Projets</a></li>
+                <li><a href="vues/myProfile.php">Mon Profil</a></li>
+                <li><a href="vues/mur.php">Mon Mur</a></li>
+                <li><a href="vues/friends.php">Mes Amis</a></li>
               </ul>
         </div>
         <div class="scroll-line"></div>
