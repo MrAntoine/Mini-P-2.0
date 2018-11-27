@@ -21,7 +21,7 @@
               <ul>
                 <li><a href="vues/myProfile.php">Mon Profil</a></li>
                 <li><a href="index.php?action=mur">Mon Mur</a></li>
-                <li><a href="vues/friends.php">Mes Amis</a></li>
+                <li><a href="index.php?action=friends">Mes Amis</a></li>
               </ul>
         </div>
         <div class="scroll-line"></div>

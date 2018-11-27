@@ -10,7 +10,6 @@
 $_SESSION["id"] = 1;
 $_SESSION["login"] = "gilles";
 */
-
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
     header("Location:index.php?action=login");
@@ -20,108 +19,108 @@ if(!isset($_SESSION["id"])) {
 $ok = false;
 
 if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
-        $id = $_SESSION["id"];
-        $ok = true; // On a le droit d afficher notre mur
-    } else {
-        $id = $_GET["id"];
-        // Verifions si on est amis avec cette personne
-        $sql = "SELECT * FROM lien WHERE etat='ami'
-                    AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
+    $id = $_SESSION["id"];
+    $ok = true; // On a le droit d afficher notre mur
+} else {
+    $id = $_GET["id"];
+    // Verifions si on est amis avec cette personne
+    $sql = "SELECT * FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
 
-        // les deux ids à tester sont : $_GET["id"] et $_SESSION["id"]
-        // A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
+    // les deux ids à tester sont : $_GET["id"] et $_SESSION["id"]
+    // A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
+    // Etape 1  : preparation
+    $query = $pdo->prepare($sql);
 
-        // Etape 1  : preparation
-        $query = $pdo->prepare($sql);
+    // Etape 2 : execution : 2 paramètres dans la requêtes !!
+    $query->execute(array($_GET['id'], $_SESSION['id'], $_SESSION['id'], $_GET['id']));
 
-        // Etape 2 : execution : 2 paramètres dans la requêtes !!
-        $query->execute(array($_GET['id'], $_SESSION['id'], $_SESSION['id'], $_GET['id']));
+    // Etape 3 :
 
-        // Etape 3 :
+    // un seul fetch
+    $line = $query->fetch();
 
-        // un seul fetch
-        $line = $query->fetch();
-
-        if($line == false){
-           $ok=true;
-        }
-
+    if($line == false){
+        $ok=true;
     }
-    if($ok==false) {
-        echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
-        echo"<form method='POST' action='index.php?action=addFriend' ><input type='submit' name='addFriend' value='Envoyer une demande d" . "'" . "ami'></form>";
 
-        /* Affichage du nom + avatar */
-        echo "";
+}
+if($ok==true) {
+    echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
+    echo"<form method='POST' action='index.php?action=addFriend' >";
+    echo "<input type='hidden' name='id_futur_ami' value='$id'>";
+    echo "<input type='submit' name='addFriend' value='Envoyer une demande'></form>";
 
-
-    } else {
-        // A completer
-        // Requête de sélection des éléments dun mur
-        // SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC
-        $sql ="SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC";
-        $sql2 = "SELECT login FROM user WHERE (id=?)";
-        // le paramètre  est le $id
-
-        // Etape 1  : preparation
-        $query = $pdo->prepare($sql);
-        $query2 = $pdo->prepare($sql2);
-        // Etape 2 : execution : 2 paramètres dans la requêtes !!
-        $query->execute(array($id));
+    /* Affichage du nom + avatar */
+    echo "";
 
 
+} else {
+    // A completer
+    // Requête de sélection des éléments dun mur
+    // SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC
+    $sql ="SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC";
+    $sql2 = "SELECT login FROM user WHERE (id=?)";
+    // le paramètre  est le $id
 
-        // Afficher le pseudo + avatar
-       include('vues/affiche_avatar.php');
+    // Etape 1  : preparation
+    $query = $pdo->prepare($sql);
+    $query2 = $pdo->prepare($sql2);
+    // Etape 2 : execution : 2 paramètres dans la requêtes !!
+    $query->execute(array($id));
 
 
-        // poster une publication
+
+    // Afficher le pseudo + avatar
+    include('vues/affiche_avatar.php');
+
+
+    // poster une publication
     echo "<div class='wrapper'>";
-        echo " <div class='article margin'>";
-        echo "<form method='POST' action='index.php?action=addPost'>";
-        echo "<input type='text' name='titrepost' placeholder='entrez un titre'>";
-        echo "<input type='text'";
-        echo "cols='40'";
-        echo " rows='2'";
-        echo " style='width:100%; height:50px;'";
-        echo " name='Text1'";
-        echo " id='Text1'";
-        echo "value=''";
-        echo "maxlength='150'";
-        echo "class='margin'";
-        echo "placeholder='Ecrivez votre post !'/>";
-        echo "<input type='hidden' name='idAmi' value='$id'>";
-        echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
-        echo "</div><br/>";
+    echo " <div class='article margin'>";
+    echo "<form method='POST' action='index.php?action=addPost'>";
+    echo "<input type='text' name='titrepost' placeholder='entrez un titre'>";
+    echo "<input type='text'";
+    echo "cols='40'";
+    echo " rows='2'";
+    echo " style='width:100%; height:50px;'";
+    echo " name='Text1'";
+    echo " id='Text1'";
+    echo "value=''";
+    echo "maxlength='150'";
+    echo "class='margin'";
+    echo "placeholder='Ecrivez votre post !'/>";
+    echo "<input type='hidden' name='idAmi' value='$id'>";
+    echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
+    echo "</div><br/>";
 
 
-        // Etape 3 : Charger les publications
-        while($line = $query->fetch()) {
+    // Etape 3 : Charger les publications
+    while($line = $query->fetch()) {
 
-            $query2->execute(array($line["idAuteur"]));
-            $line2= $query2->fetch();
+        $query2->execute(array($line["idAuteur"]));
+        $line2= $query2->fetch();
 
-            echo "<div class='article margin anim'>";
-            echo "<div class='img_article'></div>";
-            echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
-            echo "</a>";
-            echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
-            echo "<div class='article-corps anim'>";
-            echo"<p>". $line["titre"] ."</p>";
-            echo"<br><p>". $line["contenu"] ."</p>";
+        echo "<div class='article margin anim'>";
+        echo "<div class='img_article'></div>";
+        echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
+        echo "</a>";
+        echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
+        echo "<div class='article-corps anim'>";
+        echo"<p>". $line["titre"] ."</p>";
+        echo"<br><p>". $line["contenu"] ."</p>";
 
-            echo "<form method='POST' action='index.php?action=delPost'>";
-            echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
-            echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
-            echo "</div>";
-
-            echo"<div class='texte-article'>";
-            echo"</div>";
-          echo"</div>";
-
-        }
+        echo "<form method='POST' action='index.php?action=delPost'>";
+        echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
+        echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
         echo "</div>";
 
+        echo"<div class='texte-article'>";
+        echo"</div>";
+        echo"</div>";
+
     }
+    echo "</div>";
+
+}
 
 ?>
