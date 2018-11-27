@@ -1,6 +1,5 @@
 <a href="#" class="avatar">
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
-  <p>Bonjour TOI !</p>
 </a>
   <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
@@ -21,7 +20,7 @@
         <div class="menu">
               <ul>
                 <li><a href="vues/myProfile.php">Mon Profil</a></li>
-                <li><a href="vues/mur.php">Mon Mur</a></li>
+                <li><a href="index.php?action=mur">Mon Mur</a></li>
                 <li><a href="vues/friends.php">Mes Amis</a></li>
               </ul>
         </div>

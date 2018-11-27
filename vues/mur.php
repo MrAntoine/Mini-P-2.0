@@ -28,12 +28,8 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
         $sql = "SELECT * FROM lien WHERE etat='ami'
                     AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
 
-
-
-
         // les deux ids à tester sont : $_GET["id"] et $_SESSION["id"]
         // A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
-
 
         // Etape 1  : preparation
         $query = $pdo->prepare($sql);
@@ -53,7 +49,7 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
     }
     if($ok==false) {
         echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
-        echo"<input type='submit' name='addFriend' value='Envoyer une demande d" . "'" . "ami'>";
+        echo"<form method='POST' action='index.php?action=addFriend' ><input type='submit' name='addFriend' value='Envoyer une demande d" . "'" . "ami'></form>";
 
         /* Affichage du nom + avatar */
         echo "";
@@ -76,12 +72,14 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
 
 
         // Afficher le pseudo + avatar
-
+       include('vues/affiche_avatar.php');
 
 
         // poster une publication
-
+    echo "<div class='wrapper'>";
         echo " <div class='article margin'>";
+        echo "<form method='POST' action='index.php?action=addPost'>";
+        echo "<input type='text' name='titrepost' placeholder='entrez un titre'>";
         echo "<input type='text'";
         echo "cols='40'";
         echo " rows='2'";
@@ -91,9 +89,9 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
         echo "value=''";
         echo "maxlength='150'";
         echo "class='margin'";
-        echo "placeholder='Ecrivez votre post !' />";
-
-        echo "<input type='submit' name='writeMsg' value='Poster !' class='postMsg' >";
+        echo "placeholder='Ecrivez votre post !'/>";
+        echo "<input type='hidden' name='idAmi' value='$id'>";
+        echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
         echo "</div><br/>";
 
 
@@ -105,17 +103,24 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
 
             echo "<div class='article margin anim'>";
             echo "<div class='img_article'></div>";
-            echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
+            echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
             echo "</a>";
             echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
             echo "<div class='article-corps anim'>";
             echo"<p>". $line["titre"] ."</p>";
             echo"<br><p>". $line["contenu"] ."</p>";
+
+            echo "<form method='POST' action='index.php?action=delPost'>";
+            echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
+            echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
+            echo "</div>";
+
             echo"<div class='texte-article'>";
             echo"</div>";
           echo"</div>";
-        echo"</div>";
+
         }
+        echo "</div>";
 
     }
 
