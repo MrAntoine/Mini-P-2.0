@@ -9,5 +9,6 @@ $listeDesActions = array(
     "deconnexion" => "traitement/deconnexion.php",
     "enregistrement" => "vues/enregistrement.php",
     "mur" => "vues/mur.php",
+    "friends" => "vues/friends.php",
     "register" => "traitement/register.php"
 );

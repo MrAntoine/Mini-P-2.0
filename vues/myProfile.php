@@ -18,12 +18,13 @@
     <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="../js/activeComment.js"></script>
   </head>
   <body>
 
 
 
-    <a href="#" class="avatar">
+    <a href="myProfile.php" class="avatar">
       <img src="../img/fleurs-bleuesv2.jpg" alt="logo" >
       <p>Bonjour TOI !</p>
     </a>
@@ -45,7 +46,7 @@
 
           <div class="menu">
                 <ul>
-                  <li><a href="../index.php">Accueil</a></li>
+                  <li><a href="../exempleMur.html">Accueil</a></li>
                   <li><a href="myProfile.php">Mon profil</a></li>
                   <li><a href="friends.php">Mes amis</a></li>
                 </ul>
@@ -63,19 +64,20 @@
     </div>
 
     <div class="wrapper">
-        <div class="article margin anim">
-            <div class="img_article"></div>
-            <a href="#" class="nomPersonne">
-              <p>NOM DE LA PERSONNE</p>
-            </a>
-            <div class="date_article">24-08-1999</div>
-            <div class="article-corps anim">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="texte-article">
-            </div>
-          </div>
-        </div>
 
+        <div class="article margin">
+          <input type="text"
+                 cols="40"
+                 rows="2"
+                 style="width:100%; height:50px;"
+                 name="Text1"
+                 id="Text1"
+                 value=""
+                 maxlength="150"
+                 class="margin"
+                 placeholder="Ecrivez votre post !" />
+                 <input type="submit" name="writeMsg" value="Poster !" class="postMsg" >
+        </div><br/>
         <div class="article margin anim">
             <div class="img_article"></div>
             <a href="#" class="nomPersonne">
@@ -84,25 +86,25 @@
             <div class="date_article">24-08-1999</div>
             <div class="article-corps anim">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="texte-article">
+            <input type="submit" name="delMsg" value="Supprimer !" class="postMsg" >
+            <input type="submit" name="commMsg" value="Commenter !" class="postMsg" onclick="comment();">
+            <div class="texte-article" id="comm1">
+              <input type="text"
+              cols="40"
+              rows="2"
+              style="width:100%; height:50px;"
+              name="Text1"
+              id="Text1"
+              value=""
+              maxlength="150"
+              class="margin comment"
+              placeholder="Ecrivez votre post !" />
+              <input type="submit" name="writeMsg" value="Poster !" class="postCmt" >
             </div>
           </div>
-        </div>
-        <div class="article margin anim">
-            <div class="img_article"></div>
-            <a href="#" class="nomPersonne">
-              <p>NOM DE LA PERSONNE</p>
-            </a>
-            <div class="date_article">24-08-1999</div>
-            <div class="article-corps anim">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            <div class="texte-article">
-            </div>
-          </div>
-        </div>
+        </div><br/>
+
+
       </div>
     </div>
 
