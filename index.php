@@ -16,7 +16,7 @@ ob_start(); // Je démarre le buffer de sortie : les données à afficher sont s
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ma super application</title>
+    <title>FoxBook</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -46,23 +46,29 @@ if (isset($_SESSION['info'])) {
 
 
 <header>
-    <h3>Le super site</h3>
+    <h3>FoxBook</h3>
+    <?php
+    if (isset($_SESSION['id'])) {
+        echo "<li>Bonjour " . $_SESSION['login'] . " <a href='index.php?action=deconnexion'>Deconnexion</a></li>";
+    } else {
+        echo "<li><a href='index.php?action=login'>Login</a></li>";
+    }
+    ?>
 </header>
-<nav>
+
+<?php
+  include('vues/nav.php');
+ ?>
+
+<!-- <nav>
     <ul>
         <li><a href="index.php?action=page2">Va voir la page 2</a></li>
 
-        <?php
-        if (isset($_SESSION['id'])) {
-            echo "<li>Bonjour " . $_SESSION['login'] . " <a href='index.php?action=deconnexion'>Deconnexion</a></li>";
-        } else {
-            echo "<li><a href='index.php?action=login'>Login</a></li>";
-        }
-        ?>
+
 
         <li> <a href="index.php?action=enregistrement">Créer un compte</a> </li>
     </ul>
-</nav>
+</nav> -->
 
 <div class="container-fluid">
     <div class="row">
@@ -90,6 +96,6 @@ if (isset($_SESSION['info'])) {
         </div>
     </div>
 </div>
-<footer>Le pied de page</footer>
+<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine</footer>
 </body>
 </html>
