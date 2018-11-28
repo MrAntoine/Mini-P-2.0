@@ -1,7 +1,15 @@
-<a href="#" class="avatar">
-  <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
-  <p>Bonjour TOI !</p>
-</a>
+<?php
+if (isset($_SESSION['id'])) {
+  echo '<div><a href="#" class="avatar">
+        <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
+        <p>Bonjour ' .
+        $_SESSION['login']
+        .'!</p><br/><a href=\'index.php?action=deconnexion\'>Deconnexion</a></div>';
+  }
+  else {
+      echo "<a href='index.php?action=login'>Login</a>";
+  }
+?>
   <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
     <form method="post">

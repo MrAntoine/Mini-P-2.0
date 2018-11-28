@@ -47,13 +47,13 @@ if (isset($_SESSION['info'])) {
 
 <header>
     <h3>FoxBook</h3>
-    <?php
+    <!-- <?php
     if (isset($_SESSION['id'])) {
-        echo "<li>Bonjour " . $_SESSION['login'] . " <a href='index.php?action=deconnexion'>Deconnexion</a></li>";
+        echo "<li>Bonjour " . $_SESSION['login'] . "<br/><a href='index.php?action=deconnexion'>Deconnexion</a></li>";
     } else {
         echo "<li><a href='index.php?action=login'>Login</a></li>";
     }
-    ?>
+    ?> -->
 </header>
 
 <?php
@@ -96,6 +96,6 @@ if (isset($_SESSION['info'])) {
         </div>
     </div>
 </div>
-<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine</footer>
+<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
 </body>
 </html>
