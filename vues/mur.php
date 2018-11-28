@@ -119,7 +119,6 @@ if ($ok == false) {
         echo "<form method='POST' action='index.php?action=delPost'>";
         echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
         echo "<input type='hidden' name='idMur' value='".$id."'>";
-        echo "<input type='submit' name='seeComments' value='Voir les commentaires' class='postMsg' ></form>";
         if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $id) {
             echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
         }
@@ -130,19 +129,6 @@ if ($ok == false) {
         echo "</div>";
 
         echo"<div class='texte-article'>";
-        echo "<form method='POST' action='index.php?action=addComment'>";
-        echo "<input type='text'";
-        echo "cols='40'";
-        echo " rows='2'";
-        echo " style='width:100%; border-top:2px solid black;height:50px;'";
-        echo " name='Text1'";
-        echo " id='Text1'";
-        echo "value=''";
-        echo "maxlength='150'";
-        echo "class='margin'";
-        echo "placeholder='Ecrivez votre commentaire !'/>";
-        echo "<input type='hidden' name='idAmi' value='$id'>";
-        echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
         echo"</div>";
         echo"</div>";
 
