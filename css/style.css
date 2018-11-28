@@ -360,6 +360,91 @@ footer {
 }
 
 
+.FormCGTDATA{
+    width: 320px;
+    background: #fff;
+    color: #000;
+    position: relative;
+    margin-left: 30px;
+    /* transform: translate(-50%,-50%); */
+    box-sizing: border-box;
+    padding: 70px 30px;
+    display: inline-block;
+    border-radius: 50px;
+
+}
+
+
+.FormCGTDATA p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.FormCGTDATA input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.FormCGTDATA input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.FormCGTDATA input[type="text"], input[type="password"], input[type="email"], input[type="file"] ,textarea
+{
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    /* background: transparent; */
+    background-color: #b57600;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.FormCGTDATA input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, textarea
+{
+  color : #fff;
+  opacity: 1;
+}
+
+.FormCGTDATA input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b57600;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    border-bottom: 1px solid #fff;
+}
+.FormCGTDATA input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+}
+.FormCGTDATA a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    /* color: darkgrey; */
+}
+.FormCGTDATA textarea {
+  margin-bottom: 20px;
+}
+.FormCGTDATA a:hover
+{
+    /* color: #ffc107; */
+}
+
+.myProfile__img {
+  border-radius: 50%;
+  width : 210px;
+  height: 210px;
+  border : 5px solid #b57600;
+}
 
 @media only screen and (max-width: 991px) {
 

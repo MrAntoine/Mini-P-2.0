@@ -31,6 +31,7 @@ date_default_timezone_set('Europe/Paris');
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 </head>
 
 <body>
@@ -98,5 +99,43 @@ if (isset($_SESSION['info'])) {
     </div>
 </div>
 <footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
+
+<script type="text/javascript">
+      window.sr = ScrollReveal();
+      sr.reveal('.anim');
+</script>
+<script type="text/javascript">
+
+// Menu-toggle button
+
+$(document).ready(function() {
+      $(".menu-icon").on("click", function() {
+            $("nav ul").toggleClass("showing");
+      });
+});
+
+// Scrolling Effect
+
+$(window).on("scroll", function() {
+      if($(window).scrollTop()) {
+            $('nav').addClass('black');
+      }
+
+      else {
+            $('nav').removeClass('black');
+      }
+})
+
+
+</script>
+<script type="text/javascript">
+  $(window).scroll(function() {
+    var wintop = $(window).scrollTop(), docheight =
+    $(document).height(), winheight = $(window).height();
+    var scrolled = (wintop/(docheight-winheight))*100;
+    $('.scroll-line').css('width', (scrolled + '%'));
+  });
+</script>
+
 </body>
 </html>
