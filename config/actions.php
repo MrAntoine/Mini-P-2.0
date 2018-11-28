@@ -17,5 +17,6 @@ $listeDesActions = array(
     "delPost" => "traitement/delPost.php",
     "searchProfile" => "traitement/search_profile.php",
     "commentPost" => "vues/commentPost.php",
+    "like" => "vues/like.php",
     "register" => "traitement/register.php"
 );

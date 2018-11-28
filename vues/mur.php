@@ -126,7 +126,13 @@ if ($ok == false) {
         echo "<form method='POST' action='javascript:AfficheComment();'>";
         echo "<input type='submit' name='comment' value='Commenter' class='postMsg' ></form>";
         */
+
+        // Vérifié si un like est deja mis.. Limite de 1 like !
+        echo "<form method='POST' action='index.php?action=like'>";
+        echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
+        echo "<input type='submit' name='like' value='Like' class='postMsg' ></form>";
         echo "</div>";
+
 
         echo"<div class='texte-article'>";
         echo"</div>";
