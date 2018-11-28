@@ -5,8 +5,8 @@
 
   <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
-    <form method="post">
-      <input type="text" name="" placeholder="Type to search">
+    <form method="POST" action="index.php?action=searchProfile">
+      <input type="text" name="search_profile" placeholder="Rechercher">
       <input type="submit" name="" value="GO !" id="searchGo">
     </form>
   </div>

@@ -26,6 +26,10 @@ $query2 = $pdo->prepare($sql2);
 $query->execute(array($_SESSION['id'],$_SESSION['id']));
 $query2->execute(array($_SESSION['id']));
 
+// Afficher le pseudo + avatar
+$id =$_SESSION['id'];
+include('vues/affiche_avatar.php');
+
 // Etape 3 SQL :
 echo "<div class='wrapper'>"; /*wrapper*/
 

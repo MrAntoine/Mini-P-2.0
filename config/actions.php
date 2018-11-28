@@ -15,5 +15,6 @@ $listeDesActions = array(
     "delFriend" => "traitement/delFriend.php",
     "addPost" => "traitement/addPost.php",
     "delPost" => "traitement/delPost.php",
+    "searchProfile" => "traitement/search_profile.php",
     "register" => "traitement/register.php"
 );
