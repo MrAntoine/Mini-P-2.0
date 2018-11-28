@@ -15,6 +15,7 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
+/*
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
 $ok = false;
 
@@ -40,18 +41,33 @@ if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
     $line = $query->fetch();
 
     if($line == false){
-        $ok=true;
+        $ok=false;
+    }else {
+        $ok= true;
     }
 
 }
-if($ok==true) {
-    echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
-    echo"<form method='POST' action='index.php?action=addFriend' >";
-    echo "<input type='hidden' name='id_futur_ami' value='$id'>";
-    echo "<input type='submit' name='addFriend' value='Envoyer une demande'></form>";
+*/
 
-    /* Affichage du nom + avatar */
-    echo "";
+include ('traitement/check_if_friend.php');
+
+if ($ok == false) {
+
+
+    $sql3 = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=? AND etat='attente' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=? AND etat='attente' AND idUtilisateur1=?)";
+    $query3 = $pdo->prepare($sql3);
+    $query3->execute(array($_SESSION['id'], $id, $id, $_SESSION['id']));
+    $line3 = $query3->fetch();
+    if ($line3 == false) {
+        echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
+        echo "<form method='POST' action='index.php?action=addFriend' >";
+        echo "<input type='hidden' name='id_futur_ami' value='$id'>";
+        echo "<input type='submit' name='addFriend' value='Demander en ami'></form>";
+    } else {
+        echo "Une demande d'amis est déjà en attente !";
+    }
+    // Afficher le pseudo + avatar
+    include('vues/affiche_avatar.php');
 
 
 } else {
@@ -78,7 +94,7 @@ if($ok==true) {
     echo "<div class='wrapper'>";
     echo " <div class='article margin'>";
     echo "<form method='POST' action='index.php?action=addPost'>";
-    echo "<input type='text' name='titrepost' placeholder='entrez un titre'>";
+    echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre'>";
     echo "<input type='text'";
     echo "cols='40'";
     echo " rows='2'";
@@ -111,7 +127,10 @@ if($ok==true) {
 
         echo "<form method='POST' action='index.php?action=delPost'>";
         echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
-        echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
+        echo "<input type='hidden' name='idMur' value='".$id."'>";
+        if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $id) {
+            echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
+        }
         echo "</div>";
 
         echo"<div class='texte-article'>";

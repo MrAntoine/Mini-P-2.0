@@ -1,6 +1,6 @@
-<a href="#" class="avatar">
+<!--<a href="#" class="avatar">
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
-</a>
+</a>-->
   <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
     <form method="post">

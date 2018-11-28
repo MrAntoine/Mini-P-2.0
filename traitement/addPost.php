@@ -23,6 +23,6 @@ if(!isset($_SESSION["id"])) {
     $query2 = $pdo->prepare($sql2);
     $query2->execute(array($_POST['titrepost'], $_POST['Text1'], $date, "", $_SESSION['id'], $_POST['idAmi']));
 
-header("Location:index.php?action=mur");
+header("location:index.php?action=mur&id=".$_POST['idAmi']);
 
 ?>
