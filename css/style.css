@@ -269,7 +269,15 @@ nav ul li a:hover {
 }
 
 .texte-article {
-  display: none;
+  display: block;
+  width: 90%;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid #fff;
+  margin: auto;
+  margin-top: 50px;
+  background-color: #fff;
+  text-align: left;
+  padding: 10px;
 }
 
 .postMsg:hover {
@@ -349,4 +357,57 @@ footer {
 
   margin-left: 35%;
   font-weight: lighter;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+
+    body {
+      overflow-x: hidden;
+    }
+
+
+    header h3 {
+      display: none;
+    }
+
+    nav .menu a{
+      display: block;
+      border: 1px solid #000;
+      color: #000;
+    }
+
+    nav .menu {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .logoNav, .lol {
+      position: absolute; top: 0px; right: 0px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .logoNav {
+      display: block;
+    }
+
+
+    .logoNav:hover .menu {
+      max-height: 100%;
+      transition: all 300ms linear 5s;
+      transition-delay: 2s;
+      transition-duration: 5s;
+      transition-timing-function: linear;
+    }
+
+
+
+    .container-fluid {
+      margin-top: 50%;
+    }
+
+
+
 }
