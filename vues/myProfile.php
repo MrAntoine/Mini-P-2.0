@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="FormCGTDATA form2">
+  <div class="FormCGTDATA form2" id="cgt__DATA">
     <h1>Changez vos TRUCS !</h1>
     <form method="post" action="">
         <label for="nom">Nom actuel : REQUETE POUR LE NOM</label>
@@ -20,7 +20,7 @@
 
   </div>
 
-  <div class="FormCGTDATA form2">
+  <div class="FormCGTDATA form2" id="cgt__PDP">
     <h1>Changez votre PDP!</h1>
     <form method="post" action="">
       <label for="actual__img">Photo de profil actuelle</label>
