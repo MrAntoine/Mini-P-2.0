@@ -128,7 +128,7 @@ nav ul li a:hover {
   z-index: 99;
   position: fixed;
   top: 30px;
-  left: 30%;
+  left: 25%;
 }
 
 .searchbox input {
