@@ -51,7 +51,7 @@ if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
         $line2 = $query2->fetch();
 
         if($line2 == true){
-            echo "Vous avez deja envoyer une demande d'amis ! ";
+            echo "<p class='erreur_ami_attente'>Vous avez deja envoyer une demande d'amis ! </p>";
         }
 
     }
@@ -70,6 +70,6 @@ $query = $pdo->prepare($sql);
 $query->execute(array($_SESSION['id'],$_POST['id_futur_ami']));
 $id =$_POST['id_futur_ami'];
 header("Location:index.php?action=mur&id=".$id."");
-    echo "Une demande a été envoyé";
+    echo "<p class='erreur_ami_demande_sent'>Une demande a été envoyé</p>";
 
 ?>
