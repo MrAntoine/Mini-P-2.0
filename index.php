@@ -98,7 +98,7 @@ if (isset($_SESSION['info'])) {
         </div>
     </div>
 </div>
-<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
+<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a target="_blank" href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
 
 <script type="text/javascript">
       window.sr = ScrollReveal();
