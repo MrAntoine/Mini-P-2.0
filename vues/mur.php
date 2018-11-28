@@ -59,12 +59,12 @@ if ($ok == false) {
     $query3->execute(array($_SESSION['id'], $id, $id, $_SESSION['id']));
     $line3 = $query3->fetch();
     if ($line3 == false) {
-        echo "Vous n êtes pas encore ami, vous ne pouvez voir son mur !!";
+        echo "<p class='erreur_pas_ami'>Vous n êtes pas encore ami, vous ne pouvez voir son mur !!</p>";
         echo "<form method='POST' action='index.php?action=addFriend' >";
         echo "<input type='hidden' name='id_futur_ami' value='$id'>";
         echo "<input type='submit' name='addFriend' value='Demander en ami'></form>";
     } else {
-        echo "Une demande d'amis est déjà en attente !";
+        echo "<p class='erreur_ami_attente'>Une demande d'amis est déjà en attente !</p>";
     }
     // Afficher le pseudo + avatar
     include('vues/affiche_avatar.php');
@@ -95,16 +95,7 @@ if ($ok == false) {
     echo " <div class='article margin'>";
     echo "<form method='POST' action='index.php?action=addPost'>";
     echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre'>";
-    echo "<input type='text'";
-    echo "cols='40'";
-    echo " rows='2'";
-    echo " style='width:100%; height:50px;'";
-    echo " name='Text1'";
-    echo " id='Text1'";
-    echo "value=''";
-    echo "maxlength='150'";
-    echo "class='margin'";
-    echo "placeholder='Ecrivez votre post !'/>";
+    echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin' placeholder='Ecrivez votre post'/>";
     echo "<input type='hidden' name='idAmi' value='$id'>";
     echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
     echo "</div><br/>";
@@ -132,6 +123,10 @@ if ($ok == false) {
         if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $id) {
             echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
         }
+        /*
+        echo "<form method='POST' action='javascript:AfficheComment();'>";
+        echo "<input type='submit' name='comment' value='Commenter' class='postMsg' ></form>";
+        */
         echo "</div>";
 
         echo"<div class='texte-article'>";
@@ -157,3 +152,10 @@ if ($ok == false) {
 }
 
 ?>
+
+
+<script>
+    function AfficheComment() {
+        alert ("coucou");
+    }
+</script>
