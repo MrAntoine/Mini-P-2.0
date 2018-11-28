@@ -5,13 +5,15 @@
  * Date: 20/11/2018
  * Time: 21:52
  */
+
 $_SESSION["id"] = 1;
 $_SESSION["login"] = "gilles";
+
+
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
     header("Location:exempleMur.html?action=login");
 }
-
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
 $ok = false;
 
@@ -24,48 +26,30 @@ if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
 // Verifions si on est amis avec cette personne
     $sql = "SELECT * FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
 
-// les deux ids à tester sont : $_GET["id"] et $_SESSION["id"]
-// A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
-// Etape 1  : preparation
     $query = $pdo->prepare($sql);
 
-// Etape 2 : execution : 2 paramètres dans la requêtes !!
-    $query->execute(array($_GET['id'], $_SESSION['id'], $_SESSION['id'], $_GET['id']));
+    $query->execute(array($_GET['id'], $_POST['id_mur_ami'], $_SESSION['id'], $_POST['id_mur_ami']));
 
-// Etape 3 :
-
-// un seul fetch
     $line = $query->fetch();
 
-    if ($line == true) {
+    if ($line == false) {
         $ok = false;
     } else {
-
-        $sql2 = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='attente' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='attente' AND idUtilisateur1=?)";
-        $query2 = $pdo->prepare($sql2);
-        $query2->execute(array($_SESSION['id'],$_SESSION['id']));
-        $line2 = $query2->fetch();
-
-        if($line2 == true){
-            echo "Vous avez deja envoyer une demande d'amis ! ";
-        }
-
+        $ok = true;
     }
-
 }
 
-// Verifions si on est amis avec cette personne
-$sql = "DELETE * FROM lien WHERE id=? ";
-//$sql2 = "SELECT login FROM user WHERE (id=?)";
 
-// Etape 1  : preparation
-$query = $pdo->prepare($sql);
-//$query2 = $pdo->prepare($sql2);
+if($ok == true) {
+    $sql = "DELETE  FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
 
-// Etape 2 : execution : 2 paramètres dans la requêtes !!
-$query->execute(array($_SESSION['id'],$_POST['id_futur_ami']));
-$id =$_POST['id_futur_ami'];
-header("Location:index.php?action=mur&id=".$id."");
-echo "Une demande a été envoyé";
+    $query = $pdo->prepare($sql);
 
+    $query->execute(array($_SESSION['id'], $_POST['id_mur_ami'], $_POST['id_mur_ami'], $_SESSION['id']));
+
+    $id = $_POST['id_mur_ami'];
+
+    header("Location:index.php?action=mur&id=" . $id . "");
+    echo "Une demande a été envoyé";
+}
 ?>

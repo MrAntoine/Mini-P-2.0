@@ -5,8 +5,10 @@
  * Date: 20/11/2018
  * Time: 21:52
  */
+
 $_SESSION["id"] = 1;
 $_SESSION["login"] = "gilles";
+
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
     header("Location:exempleMur.html?action=login");
