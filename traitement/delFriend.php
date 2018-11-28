@@ -41,8 +41,6 @@ if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
         $ok = false;
     } else {
 
-        /*$sql2 = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='attente' AND idUtilisateur2=?)";
-        */
         $sql2 = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='attente' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='attente' AND idUtilisateur1=?)";
         $query2 = $pdo->prepare($sql2);
         $query2->execute(array($_SESSION['id'],$_SESSION['id']));
@@ -57,7 +55,7 @@ if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
 }
 
 // Verifions si on est amis avec cette personne
-$sql = "INSERT INTO lien VALUES(NULL,?,?,'attente') ";
+$sql = "DELETE * FROM lien WHERE id=? ";
 //$sql2 = "SELECT login FROM user WHERE (id=?)";
 
 // Etape 1  : preparation
@@ -68,6 +66,6 @@ $query = $pdo->prepare($sql);
 $query->execute(array($_SESSION['id'],$_POST['id_futur_ami']));
 $id =$_POST['id_futur_ami'];
 header("Location:index.php?action=mur&id=".$id."");
-    echo "Une demande a été envoyé";
+echo "Une demande a été envoyé";
 
 ?>

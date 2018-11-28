@@ -12,5 +12,7 @@ $listeDesActions = array(
     "friends" => "vues/friends.php",
     "myprofile" => "vues/myProfile.php",
     "addFriend" => "traitement/addFriend.php",
+    "addPost" => "traitement/addPost.php",
+    "delPost" => "traitement/delPost.php",
     "register" => "traitement/register.php"
 );
