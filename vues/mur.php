@@ -127,12 +127,24 @@ if ($ok == false) {
         echo "<input type='submit' name='comment' value='Commenter' class='postMsg' ></form>";
         */
 
-        // Vérifié si un like est deja mis.. Limite de 1 like !
+
+        // Vérifié si un like est deja mis..
+        $likeSql = "SELECT * FROM aime WHERE (idUtilisateur=? AND idEcrit=?)";
+        $likeQuery = $pdo->prepare($likeSql);
+        $likeQuery->execute(array($_SESSION['id'],$line['id']));
+        $likeLine = $likeQuery->fetch();
+print_r($likeLine);
+        if($likeLine == false){
+            //style css
+            ?> <style> .likes{ background-color:; }</style> <?php
+        } else {
+            // style css
+            ?> <style> .likes{ background-color:red; }</style> <?php
+        }
         echo "<form method='POST' action='index.php?action=like'>";
         echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
-        echo "<input type='submit' name='like' value='Like' class='postMsg' ></form>";
+        echo "<input type='submit' name='like' value='Like' class='postMsg likes' ></form>";
         echo "</div>";
-
 
         echo"<div class='texte-article'>";
         echo"</div>";
