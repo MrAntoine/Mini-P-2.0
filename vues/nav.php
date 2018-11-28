@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 if (isset($_SESSION['id'])) {
   echo '<div><a href="#" class="avatar">
@@ -11,11 +10,10 @@ if (isset($_SESSION['id'])) {
       echo "<a href='index.php?action=login'>Login</a>";
   }
 ?>
-=======
 <!--<a href="#" class="avatar">
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
 </a>-->
->>>>>>> 349b77df388d92d3b8e4f2939b9b127a26b32887
+
   <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
     <form method="post">

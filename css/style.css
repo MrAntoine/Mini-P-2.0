@@ -346,8 +346,7 @@ nav ul li a:hover {
 footer {
   width: 30%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
+
   margin-left: 35%;
   font-weight: lighter;
 }
