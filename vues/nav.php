@@ -34,7 +34,7 @@ if (isset($_SESSION['id'])) {
 
         <div class="menu">
               <ul>
-                <li><a href="vues/myProfile.php">Mon Profil</a></li>
+                <li><a href="index.php?action=myProfile">Mon Profil</a></li>
                 <li><a href="index.php?action=mur">Mon Mur</a></li>
                 <li><a href="index.php?action=friends">Mes Amis</a></li>
               </ul>
