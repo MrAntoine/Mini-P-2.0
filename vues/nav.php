@@ -1,15 +1,4 @@
-<?php
-if (isset($_SESSION['id'])) {
-  echo '<div><a href="#" class="avatar">
-        <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
-        <p>Bonjour ' .
-        $_SESSION['login']
-        .'!</p><br/><a href=\'index.php?action=deconnexion\'>Deconnexion</a></div>';
-  }
-  else {
-      echo "<a href='index.php?action=login'>Login</a>";
-  }
-?>
+
 <!--<a href="#" class="avatar">
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
 </a>-->
@@ -35,6 +24,13 @@ if (isset($_SESSION['id'])) {
                 <li><a href="index.php?action=myProfile">Mon Profil</a></li>
                 <li><a href="index.php?action=mur">Mon Mur</a></li>
                 <li><a href="index.php?action=friends">Mes Amis</a></li>
+                  <?php
+                  if (isset($_SESSION['id'])) {
+                      echo "<li><a href='index.php?action=deconnexion'>Deconnexion</a></li>";
+                  }else{
+                      echo "<li><a href='index.php?action=login'>Connexion</a></li>";
+                  }
+                  ?>
               </ul>
         </div>
         <div class="scroll-line"></div>
