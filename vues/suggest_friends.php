@@ -10,9 +10,9 @@
 $_SESSION["id"] = 1;
 $_SESSION["login"] = "gilles";
 
-if(!isset($_SESSION["id"])) {
+if (!isset($_SESSION["id"])) {
 // On n est pas connecté, il faut retourner à la pgae de login
-header("Location:index.php?action=login");
+    header("Location:index.php?action=login");
 }
 
 //$sql = "SELECT * FROM lien WHERE (etat IS NOT NULL)"; // ok
@@ -25,14 +25,19 @@ $sql = "SELECT * FROM user WHERE id NOT IN ( SELECT user.id FROM user INNER JOIN
 
 $query = $pdo->prepare($sql);
 
-$query->execute(array($_SESSION['id'],$_SESSION['id']));
+$query->execute(array($_SESSION['id'], $_SESSION['id']));
 //$query->execute(array($_SESSION['id']));
 
-
+echo "<div class=\"sideFriends\">Suggestion d'amis :";
 // A FAIRE : Penser à limiter le nombre de boucle pour limiter le nomdre de suggestions
-while($line = $query->fetch()) {
-    echo "";
-    echo "<a href='index.php?action=mur&id=".$line['id']."'>".$line['login']."</a><br/>";
+while ($line = $query->fetch()) {
+    echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "
+<form method='POST' action='index.php?action=addFriend' >
+<input type='hidden' name='id_futur_ami' value='$id'>
+<input type='submit' name='addFriend' value='Demander en ami'></form>
+</a><br/>";
 }
+echo "</div>";
 
 ?>
+

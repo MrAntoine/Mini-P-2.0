@@ -39,10 +39,10 @@ while($line2 = $query2->fetch()) {
     echo "<div class='img_article'></div>";
     echo "<a class='nomPersonne' href='index.php?action=mur&id=". $line2["id"] ."'>".$line2["login"]."</a>";
     echo "<br/><div class='etat'>En attente</div>";
-    echo "<form method='POST' action='index.php?action=delFriend' >";
+    echo "<form method='POST' action='index.php?action=declineFriend' >";
     echo "<input type='hidden' name='idAmi' value='".$line2['id']."'>";
     echo "<input type='submit' name='delFriend' value='Refuser'></form>";
-    echo "<form method='POST' action='index.php?action=addFriend' >";
+    echo "<form method='POST' action='index.php?action=acceptFriend' >";
     echo "<input type='hidden' name='idAmi' value='".$line2['id']."'>";
     echo"<input type='submit' name='acceptFriend' value='Accepter'></form>";
     echo "</div>";
