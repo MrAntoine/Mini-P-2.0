@@ -98,6 +98,14 @@ if (isset($_SESSION['info'])) {
         </div>
     </div>
 </div>
+
+<div class="sideFriends">
+  suggestion d'amis :
+  <br>LE NOM DE L'AMI : <a href="#">LE LIEN VERS LE PROFIL</a>
+<br><br>LE NOM DE L'AUTRE AMI : <a href="#">LE LIEN VERS LE PROFIL</a>
+
+</div>
+
 <footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a target="_blank" href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
 
 <script type="text/javascript">
