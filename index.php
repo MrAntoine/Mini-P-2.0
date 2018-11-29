@@ -32,6 +32,7 @@ date_default_timezone_set('Europe/Paris');
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="js/resp-nav.js"></script>
 </head>
 
 <body>
