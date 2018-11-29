@@ -2,8 +2,8 @@
 <!--<a href="#" class="avatar">
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
 </a>-->
-
-  <a href="#" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
+  <div class="white-4-respNav"></div>
+  <a href="index.php" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
     <form method="POST" action="index.php?action=searchProfile">
       <input type="text" name="search_profile" placeholder="Rechercher">
@@ -11,8 +11,8 @@
     </form>
   </div>
   <div class="header-toogle">
-    <a href="#nav" class="header-toogle-open"><img src="img/menu.png" width="30" alt="Ouvrir Menu"></a>
-    <a href="#" class="header-toogle-close"><img src="img/menu-close.png" width="30" alt="Fermer Menu"></a>
+    <a href="#nav" class="header-toogle-open" id="menu-open" onclick="openNav(); changeButton(this.id);"><img src="img/menu.png" width="30" alt="Ouvrir Menu"></a>
+    <a href="#" class="header-toogle-close" id="menu-close" onclick="closeNav(); changeButton(this.id);"><img src="img/menu-close.png" width="30" alt="Fermer Menu"></a>
   </div>
   <nav id="nav">
         <div class="menu-icon">
