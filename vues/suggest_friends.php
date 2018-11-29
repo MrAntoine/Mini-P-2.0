@@ -28,14 +28,10 @@ $query = $pdo->prepare($sql);
 $query->execute(array($_SESSION['id'],$_SESSION['id']));
 //$query->execute(array($_SESSION['id']));
 
-// Afficher le pseudo + avatar
-$id =$_SESSION['id'];
-include('vues/affiche_avatar.php');
 
-
-// limiter le nombre de boucle pour limiter le nomdre de suggestions
+// A FAIRE : Penser à limiter le nombre de boucle pour limiter le nomdre de suggestions
 while($line = $query->fetch()) {
-
+    echo "";
     echo "<a href='index.php?action=mur&id=".$line['id']."'>".$line['login']."</a><br/>";
 }
 
