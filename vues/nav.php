@@ -10,16 +10,16 @@
       <input type="submit" name="" value="GO !" id="searchGo">
     </form>
   </div>
+  <div class="header-toogle">
+    <a href="#nav" class="header-toogle-open"><img src="img/menu.png" width="30" alt="Ouvrir Menu"></a>
+    <a href="#" class="header-toogle-close"><img src="img/menu-close.png" width="30" alt="Fermer Menu"></a>
+  </div>
   <nav id="nav">
         <div class="menu-icon">
               <i class="fa fa-bars fa-2x"></i>
         </div>
-        <div class="header-toogle">
-              <a href="#nav" class="header-toogle-open"><img src="img/menu.png" width="30" alt="Ouvrir Menu"></a>
-              <a href="#" class="header-toogle-close"><img src="img/menu-close.png" width="30" alt="Fermer Menu"></a>
-        </div>
 
-        <div class="menu">
+        <div class="menu" id="menu">
               <ul>
                 <li><a href="index.php?action=myProfile">Mon Profil</a></li>
                 <li><a href="index.php?action=mur">Mon Mur</a></li>

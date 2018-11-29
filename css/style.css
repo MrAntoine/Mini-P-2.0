@@ -449,45 +449,122 @@ footer {
 @media only screen and (max-width: 991px) {
 
     body {
+      font-size: 12px;
       overflow-x: hidden;
     }
-
 
     header h3 {
       display: none;
     }
 
+    nav .menu {
+      display: none;
+      /* max-height: 0; */
+      margin-top: 100px;
+      background-color: white;
+      overflow: hidden;
+      color: #000;
+      width: 100%;
+      z-index: 999;
+    }
+
     nav .menu a{
       display: block;
-      border: 1px solid #000;
+      border-bottom: 1px solid #000;
+      width: 100%;
       color: #000;
     }
 
-    nav .menu {
-      max-height: 0;
-      overflow: hidden;
+    nav ul {
+        line-height: 18px;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+        transition: 1s;
     }
 
-    .logoNav, .lol {
-      position: absolute; top: 0px; right: 0px;
-      width: 20px;
-      height: 20px;
+    nav.black ul {
+        background: #b57600;
     }
 
-    .logoNav {
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: 0.5s;
+    }
+
+    nav ul li a:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #b57600;
+    }
+
+
+    .header-toogle {
+      display: inline-block;
+    }
+
+    .header-toogle {
+      position: absolute; top: 25px; right: 10px;
       display: block;
     }
 
+    .header-toogle-close {
+      display: none;
+    }
 
-    .logoNav:hover .menu {
-      max-height: 100%;
+    .header-toogle:target .header-toogle-close{
+      display:inline;
+    }
+
+    .header-toogle:target .menu{
+      max-height: 0%;
       transition: all 300ms linear 5s;
       transition-delay: 2s;
       transition-duration: 5s;
       transition-timing-function: linear;
     }
 
+    .header-toogle:target .header-toogle-open{
+      display:none;
+    }
 
+
+
+/*
+    .logoNav img {
+      border: 2px solid white;
+      position: absolute; top: 5px; right: 5px;
+      width: 60px;
+      height: 60px;
+    }*/
+
+     .logoNav {
+      /* display: block; */
+      display: none;
+      /* position: absolute; top: 5px; right: 5px;
+      width: 60px;
+      height: 60px;
+      margin-left: 20px; */
+    }
+
+    /* .logoNav:hover .menu{
+      max-height: 0%;
+
+    }
+
+    .logoNav img:hover .menu {
+      max-height: 100%;
+      transition: all 300ms linear 5s;
+      transition-delay: 2s;
+      transition-duration: 5s;
+      transition-timing-function: linear;
+    } */
 
     .container-fluid {
       margin-top: 50%;
