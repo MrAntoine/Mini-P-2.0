@@ -15,17 +15,11 @@ if (!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-//$sql = "SELECT * FROM lien WHERE (etat IS NOT NULL)"; // ok
-//$sql = "SELECT * FROM user INNER JOIN lien ON user.id=idUtilisateur2 AND etat IS NOT NULL AND idUtilisateur1=?"; //ok
-
-
-//OK //$sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat IS NOT NULL AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat IS NOT NULL AND idUtilisateur1=?)";
-
-$sql = "SELECT * FROM user WHERE id NOT IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat IS NOT NULL AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat IS NOT NULL AND idUtilisateur1=?)";
+$sql = "SELECT * FROM user WHERE id <> ? AND id NOT IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat IS NOT NULL AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat IS NOT NULL AND idUtilisateur1=?) LIMIT 2";
 
 $query = $pdo->prepare($sql);
 
-$query->execute(array($_SESSION['id'], $_SESSION['id']));
+$query->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
 //$query->execute(array($_SESSION['id']));
 
 echo "<div class=\"sideFriends\">Suggestion d'amis :";
