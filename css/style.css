@@ -1,5 +1,6 @@
 /* ~190 : ARTICLES*/
 
+/* TODO: AVATAR RESPONSIVE */
 
 
 * {
@@ -619,6 +620,10 @@ footer {
       padding: 20px 5px;
       border-radius: 50px;
       margin-bottom: 10px;
+    }
+
+    .avatar {
+
     }
 
     footer {
