@@ -31,11 +31,11 @@ $query->execute(array($_SESSION['id'], $_SESSION['id']));
 echo "<div class=\"sideFriends\">Suggestion d'amis :";
 // A FAIRE : Penser à limiter le nombre de boucle pour limiter le nomdre de suggestions
 while ($line = $query->fetch()) {
-    echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "
-<form method='POST' action='index.php?action=addFriend' >
-<input type='hidden' name='id_futur_ami' value='$id'>
-<input type='submit' name='addFriend' value='Demander en ami'></form>
-</a><br/>";
+
+    echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a>";
+    echo "<form method='POST' action='index.php?action=addFriend' >";
+    echo "<input type='hidden' name='id_futur_ami' value='".$line['id']."'>";
+    echo "<input type='submit' name='addFriend' value='Demander en ami'></form><br/>";
 }
 echo "</div>";
 

@@ -50,6 +50,5 @@ if($ok == true) {
     $id = $_POST['id_mur_ami'];
 
     header("Location:index.php?action=mur&id=" . $id . "");
-    echo "Une demande a été envoyé";
 }
 ?>
