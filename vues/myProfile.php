@@ -8,13 +8,13 @@
         <label for="email">Email actuel : REQUETE POUR L'EMAIL</label>
         <input type="email" id="email" required name="mail-address" placeholder="Votre nouvelle adresse e-mail">
         <br>
-        <label for="password">Nouveau mot de passe</label>
+        <label for="password">Votre nouveau mot de passe</label>
         <input type="password" id="password" required name="password">
         <br>
 
-        <label for="passwordcf">Confirmez le nouveau mot de passe</label>
+        <label for="passwordcf">Confirmez votre nouveau mot de passe</label>
         <input type="password" required name="passwordcf">
-        <input type="submit" name="send" value="Send it !">
+        <input type="submit" name="send" value="Confirmer">
     </form>
 
 
@@ -33,7 +33,7 @@
         <br>
         <br>
 
-        <input type="submit" name="send" value="Send it !">
+        <input type="submit" name="send" value="Confirmer">
     </form>
 
 
