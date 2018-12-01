@@ -108,7 +108,7 @@ if (isset($_SESSION['info'])) {
   include('vues/suggest_friends.php');
  ?>
 
-<footer>FOXBOOK<br/>GAUTIER Théo | TRACCOEN Léa | VANDERBRECHT Antoine<br/><a target="_blank" href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">lien du GitHub</a></footer>
+<footer>FOXBOOK<br/><a target="_blank" href="https://gotchit.fr/">GAUTIER Théo</a> | <a target="_blank" href="https://antoinevanderbrecht.fr/">VANDERBRECHT Antoine</a> | TRACCOEN Léa <br/><a target="_blank" href="https://github.com/MrAntoine/Mini_Projet_Facebook_MMI2/">Lien du dépôt GitHub</a></footer>
 
 <script type="text/javascript">
       window.sr = ScrollReveal();
