@@ -13,16 +13,15 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-// Il faut vérifier avant si on est amis ou pas !!!
-
     $date = date('Y-m-d h:i:s', time());
 
-// Verifions si on est amis avec cette personne
+if(isset($_POST['Text1'],$_POST['titrepost'],$_POST['writeMsgSubmit'])) {
+
     $sql2 = "INSERT INTO ecrit VALUES(NULL,?,?,?,?,?,?)";
 
     $query2 = $pdo->prepare($sql2);
     $query2->execute(array($_POST['titrepost'], $_POST['Text1'], $date, "", $_SESSION['id'], $_POST['idAmi']));
 
-header("location:index.php?action=mur&id=".$_POST['idAmi']);
-
+    header("location:index.php?action=mur&id=" . $_POST['idAmi']);
+}
 ?>
