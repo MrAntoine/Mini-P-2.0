@@ -22,17 +22,14 @@ $query = $pdo->prepare($sql);
 
 $query->execute(array($_POST['search_profile']));
 
-echo "<div>Liste des utilisateurs : </div>";
-while ($line = $query->fetch()) {
-   $ok = true;
-    echo "<a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a><br/>";
+if ($_POST['search_profile'] == "") {
+    echo "Désolé mais aucun membre n'est inscrit avec ce pseudo. <br/> Si vous connaissez cette personne vous pouvez lui suggérer de créer un compte. ";
+} else {
+    echo "<div>Liste des utilisateurs : </div>";
+    while ($line = $query->fetch()) {
+        echo "<a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a><br/>";
+    }
 }
-
-if ($ok ==false){
-    echo "Désolé mais aucun membre est inscrit avec ce pseudo. <br/> Si vous connaissez cette personne vous pouvez lui suggéré de créer un compte. ";
-}
-
-
 
 
 ?>
