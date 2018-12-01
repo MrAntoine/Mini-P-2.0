@@ -16,8 +16,8 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-    $sql = "DELETE  FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
+    $sql = "DELETE  FROM lien WHERE etat='attente' AND (idUtilisateur1=? AND idUtilisateur2=?)";
     $query = $pdo->prepare($sql);
-    $query->execute(array($_POST['idAmi'], $_SESSION['id'], $_SESSION['id'],$_POST['idAmi']));
+    $query->execute(array($_POST['idAmi'], $_SESSION['id']));
 header("Location:index.php?action=friends");
 ?>
