@@ -15,13 +15,13 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-if(isset($_FILES['image_post']) AND !empty($_FILES['image_post']['name'])){
+if(isset($_POST['image_post']) AND !empty($_POST['image_post']['name'])){
 
     $tailleMax = 2097152;
     $extensionValides = array('jpg','jpeg','png','gif');
 
-    if($_FILES['image_post']['size'] <= $tailleMax){
-        $extensionUpload = strtolower(substr(strrchr($_FILES['image_post']['name'], '.'), 1));
+    if($_POST['image_post']['size'] <= $tailleMax){
+        $extensionUpload = strtolower(substr(strrchr($_POST['image_post']['name'], '.'), 1));
         if(in_array($extensionUpload, $extensionValides)){
             $chemin = "/uploads/".$_SESSION['id'].".".$extensionUpload;
             $resultat = move_uploaded_file($_FILES['image_post']['tmp_name'], $chemin);
