@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Login de notre FB !</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-<div class="wrapper">
-
-    <div class="Form form1">
+<!--<div class="Form form1">
         <img src="img/logoSite.png" class="logo-form">
         <h1>Identifiez-vous !</h1>
         <form method="post" action="/traitement/connexion.php">
@@ -35,6 +25,16 @@
     </div>
 </div>
 
+-->
+<?php
+echo "<br><br><br><br><br><br>";
+echo "<form action=\"index.php?action=connexion\" method=\"POST\">
+<input type=\"text\" placeholder=\"Login\" name=\"login\" required>
+<input type=\"password\" placeholder=\"Password\" name=\"mdp\" required>
+    
+<input type=\"submit\" value=\"Se connecter\">
+</form>";
 
-</body>
-</html>
+echo "<br><br><br><br><br><br>";
+
+?>
