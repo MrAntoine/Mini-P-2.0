@@ -28,6 +28,9 @@ date_default_timezone_set('Europe/Paris');
 
     <!-- Ma feuille de style à moi -->
     <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/404.css" rel="stylesheet">
+
+
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -88,7 +91,8 @@ if (isset($_SESSION['info'])) {
             // Est ce que cette action existe dans la liste des actions
             if (array_key_exists($action, $listeDesActions) == false) {
                 include("vues/404.php"); // NON : page 404
-            } else {
+            }
+            else {
                 include($listeDesActions[$action]); // Oui, on la charge
             }
 

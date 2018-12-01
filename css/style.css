@@ -445,6 +445,11 @@ footer {
     /* color: #ffc107; */
 }
 
+
+.textPost {
+  border-top: 1px solid #b57600;
+}
+
 .myProfile__img {
   border-radius: 50%;
   width : 210px;
