@@ -97,6 +97,10 @@ if ($ok == false) {
     echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre'>";
     echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin' placeholder='Ecrivez votre post'/>";
     echo "<input type='hidden' name='idAmi' value='$id'>";
+    echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'>";
+    echo "<input type='file' name='fileToUpload' id='fileToUpload'>";
+    echo "<input type='submit' name='submitupload'>";
+    echo "</form>";
     echo "<input type='submit' name='writeMsg' value='Publier' class='postMsg' ></form>";
     echo "</div><br/>";
 
