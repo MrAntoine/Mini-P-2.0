@@ -94,8 +94,8 @@ if ($ok == false) {
     echo "<div class='wrapper'>";
     echo " <div class='article margin'>";
     echo "<form method='POST' action='index.php?action=addPost'>";
-    echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre'>";
-    echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin' placeholder='Ecrivez votre post'/>";
+    echo "<input type='text' name='titrepost' class=\"titrePost\"placeholder='Ecrivez votre titre'>";
+    echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin textPost' placeholder='Ecrivez votre post'/>";
     echo "<input type='hidden' name='idAmi' value='$id'>";
     echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'>";
     echo "<input type='file' name='fileToUpload' id='fileToUpload'>";
