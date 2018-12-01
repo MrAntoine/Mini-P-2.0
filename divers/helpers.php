@@ -6,9 +6,6 @@
  * Time: 10:28
  */
 
-include("config/bd.php"); // commentaire
-
-
 function FakeConnexion (){
     $_SESSION["id"] = 1;
     $_SESSION["login"] = "gilles";

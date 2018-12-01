@@ -14,10 +14,10 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-//include ('traitement/check_if_friend.php');
+include ('traitement/check_if_friend.php');
 
 
-
+/*
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
 $ok = false;
 
@@ -28,6 +28,7 @@ if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
     $id = $_GET["id"];
     CheckAmis ($_SESSION["id"],$_GET["id"]);
 }
+*/
 
 
 if ($ok == false) {
