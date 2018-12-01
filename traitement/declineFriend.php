@@ -7,8 +7,7 @@
  */
 
 
-$_SESSION["id"] = 1;
-$_SESSION["login"] = "gilles";
+FakeConnexion();
 
 
 if(!isset($_SESSION["id"])) {

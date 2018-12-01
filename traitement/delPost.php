@@ -5,8 +5,7 @@
  * Date: 27/11/2018
  * Time: 14:53
  */
-$_SESSION["id"] = 1;
-$_SESSION["login"] = "gilles";
+FakeConnexion();
 
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login

@@ -5,6 +5,12 @@
  * Date: 28/11/2018
  * Time: 10:28
  */
+include("config/bd.php"); // commentaire
+
+function FakeConnexion (){
+    $_SESSION["id"] = 1;
+    $_SESSION["login"] = "gilles";
+}
 
 
 function getUser($id) {
@@ -44,7 +50,30 @@ function CheckString ($text){
     }
     /*$text = nl2br($text);*/
     return $text;
-};
+}
+
+
+function CheckAmis ($one,$two) {
+
+
+        $sql = "SELECT * FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
+
+        $query = $pdo->prepare($sql);
+
+        $query->execute(array($one, $two, $two, $one));
+
+        $line = $query->fetch();
+
+        if ($line == false) {
+            $ok = false;
+        } else {
+            $ok = true;
+        }
+        return $ok;
+
+}
+
+
 
 ?>
 

@@ -6,8 +6,7 @@
  * Time: 17:44
  */
 
-$_SESSION["id"] = 1;
-$_SESSION["login"] = "gilles";
+FakeConnexion();
 
 if (!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");

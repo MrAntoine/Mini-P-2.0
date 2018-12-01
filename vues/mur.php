@@ -7,49 +7,28 @@
  */
 
 
-$_SESSION["id"] = 1;
-$_SESSION["login"] = "gilles";
+FakeConnexion();
 
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
     header("Location:index.php?action=login");
 }
 
-/*
+//include ('traitement/check_if_friend.php');
+
+
+
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
 $ok = false;
 
-if(!isset($_GET["id"]) || ($_GET["id"])==($_SESSION["id"])){
+if (!isset($_GET["id"]) || ($_GET["id"]) == ($_SESSION["id"])) {
     $id = $_SESSION["id"];
     $ok = true; // On a le droit d afficher notre mur
 } else {
     $id = $_GET["id"];
-    // Verifions si on est amis avec cette personne
-    $sql = "SELECT * FROM lien WHERE etat='ami' AND ((idUtilisateur1=? AND idUtilisateur2=?) OR ((idUtilisateur1=? AND idUtilisateur2=?)))";
-
-    // les deux ids à tester sont : $_GET["id"] et $_SESSION["id"]
-    // A completer. Il faut récupérer une ligne, si il y en a pas ca veut dire que lon est pas ami avec cette personne
-    // Etape 1  : preparation
-    $query = $pdo->prepare($sql);
-
-    // Etape 2 : execution : 2 paramètres dans la requêtes !!
-    $query->execute(array($_GET['id'], $_SESSION['id'], $_SESSION['id'], $_GET['id']));
-
-    // Etape 3 :
-
-    // un seul fetch
-    $line = $query->fetch();
-
-    if($line == false){
-        $ok=false;
-    }else {
-        $ok= true;
-    }
-
+    CheckAmis ($_SESSION["id"],$_GET["id"]);
 }
-*/
 
-include ('traitement/check_if_friend.php');
 
 if ($ok == false) {
 
@@ -71,19 +50,16 @@ if ($ok == false) {
 
 
 } else {
-    // A completer
-    // Requête de sélection des éléments dun mur
-    // SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC
+
     $sql ="SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC";
+
     $sql2 = "SELECT login FROM user WHERE (id=?)";
-    // le paramètre  est le $id
 
-    // Etape 1  : preparation
     $query = $pdo->prepare($sql);
-    $query2 = $pdo->prepare($sql2);
-    // Etape 2 : execution : 2 paramètres dans la requêtes !!
-    $query->execute(array($id));
 
+    $query2 = $pdo->prepare($sql2);
+
+    $query->execute(array($id));
 
 
     // Afficher le pseudo + avatar
@@ -92,7 +68,7 @@ if ($ok == false) {
     // Creation de post
     creerPost($_SESSION['id']);
 
-    // Etape 3 : Charger les publications
+    // parcours des publications
     while($line = $query->fetch()) {
 
         $query2->execute(array($line["idAuteur"]));
