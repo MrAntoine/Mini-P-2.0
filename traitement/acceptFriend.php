@@ -15,8 +15,10 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-$sql = "UPDATE lien SET etat='ami' WHERE id IN ( SELECT lien.id FROM lien INNER JOIN lien ON idUtilisateur1=? AND etat='attente' AND idUtilisateur2=?)";
+$sql = "UPDATE lien SET etat='ami' WHERE etat='attente' AND (idUtilisateur1=? AND idUtilisateur2=?)";
+
 $query = $pdo->prepare($sql);
-$query->execute(array($_POST['idAmi'],$_SESSION['id']));
+$query->execute(array($_POST['idAmi'], $_SESSION['id']));
 header("Location:index.php?action=friends");
+
 ?>
