@@ -11,7 +11,7 @@ $_SESSION["login"] = "gilles";
 
 if(!isset($_SESSION["id"])) {
     // On n est pas connecté, il faut retourner à la pgae de login
-    header("Location:exempleMur.html?action=login");
+    header("Location:index.php?action=login");
 }
 
 // On veut affchier notre mur ou celui d'un de nos amis et pas faire n'importe quoi
