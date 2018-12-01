@@ -5,7 +5,14 @@ html {
 }
 
 body {
-  background-color: #b57600;
+  background-color: #fff;
+  background-image: none;
+  font-size: 12px;
+}
+
+nav, .searchbox, #searchGo, #main-header, .sideFriends, .header-toogle, footer, .white-4-respNav, .logoNav {
+  display: none;
+
 }
 
 .wrapper {
@@ -128,10 +135,26 @@ form input{
 }
 
 @media only screen and (max-width: 991px) {
-  .logo-form{
-    display: none;
+  /* .logo-form{
+    display: none; */
+  /* } */
+
+  .container-fluid {
+    position: absolute;
+    top: 0px; left: 0px;
+    text-align: center;
+    max-width: 991px;
+    margin-top: 30px;
   }
-    .Form{
+  .wrapper {
+    position: absolute; top: 0px; left: 0px;
+    border-radius: 0px;
+  }
+
+  .Form{
+    margin: 0;
     background-color: transparent;
+    width: 80%;
+
   }
 }

@@ -21,7 +21,7 @@ html {
 body {
       width: 100%;
       background-image: url(../img/bg.png);
-      background-size: cover;
+      /* background-size: cover; */
       background-repeat: no-repeat;
 }
 
@@ -139,6 +139,7 @@ nav ul li a:hover {
 .searchbox input {
   padding: 5px;
   border-radius: 20px;
+  border: 2px solid #b57600;
 }
 
 #searchGo{

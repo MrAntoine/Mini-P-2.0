@@ -15,10 +15,10 @@
             <input type="email" required name="mail-address" placeholder="Entrez votre adresse mail">
             <input type="password" required name="password" placeholder="Enter your password">
 
-            <input type="submit" name="send" value="Send it !">
+            <input type="submit" name="send" value="Entrez sur FoxBook !">
         </form>
     </div>
-    <br><p style="color:#fff">OU</p>
+    <br>
 
 
 
@@ -30,7 +30,7 @@
             <input type="email" required name="mail-address" placeholder="Entrez votre adresse e-mail">
             <input type="password" required name="password" placeholder="Entrez votre mot de passe">
             <input type="password" required name="passwordcf" placeholder="Vérifiez votre mot de passe">
-            <input type="submit" name="send" value="Send it !">
+            <input type="submit" name="send" value="Entrez sur FoxBook !">
         </form>
     </div>
 </div>
