@@ -20,10 +20,10 @@ $sql = "SELECT * FROM user WHERE id <> ? AND id NOT IN ( SELECT user.id FROM use
 $query = $pdo->prepare($sql);
 
 $query->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
-//$query->execute(array($_SESSION['id']));
 
 echo "<div class=\"sideFriends\">Suggestion d'amis :";
-// A FAIRE : Penser à limiter le nombre de boucle pour limiter le nomdre de suggestions
+
+
 while ($line = $query->fetch()) {
 
     echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a>";

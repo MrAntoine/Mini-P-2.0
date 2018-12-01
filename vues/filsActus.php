@@ -18,21 +18,9 @@ if (!isset($_SESSION["id"])) {
 //include('vues/affiche_avatar.php');
 
 
-// poster une publication
-echo "<div class='wrapper'>";
-echo " <div class='article margin'>";
-echo "<form method='POST' action='index.php?action=addPost'>";
-echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre' required>";
-echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin' placeholder='Ecrivez votre post' required/>";
-echo "<input type='hidden' name='idAmi' value='".$_SESSION['id'].">";
-echo "<input type='submit' name='writeMsgSubmit' value='Publier' class='postMsg' ></form>";
-echo "</div><br/>";
 
-echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'> ";
-echo "<input type='file' name='image_post'>";
-echo "<input type='hidden' value=''>";
-echo "<input type='submit' name='submit_image_post'></form>";
-
+// Creation de post
+creerPost($_SESSION['id']);
 
 
 $sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUtilisateur1=?) OR ?";

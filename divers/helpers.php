@@ -16,3 +16,35 @@ function getUser($id) {
 
     return $user;
 }
+
+
+function creerPost($id) {
+    // poster une publication
+    echo "<div class='wrapper'>";
+    echo " <div class='article margin'>";
+    echo "<form method='POST' action='index.php?action=addPost'>";
+    echo "<input type='text' name='titrepost' placeholder='Ecrivez votre titre' required>";
+    echo "<input type='text' cols='40' rows='2' style='width:100%; height:50px;' name='Text1' id='Text1' value='' maxlength='150' class='margin' placeholder='Ecrivez votre post' required/>";
+    echo "<input type='hidden' name='idAmi' value='$id'>";
+    echo "<input type='submit' name='writeMsgSubmit' value='Publier' class='postMsg' ></form>";
+    echo "</div><br/>";
+
+    echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'> ";
+    echo "<input type='file' name='image_post'>";
+    echo "<input type='hidden' value=''>";
+    echo "<input type='submit' name='submit_image_post'></form>";
+}
+
+
+function CheckString ($text){
+    $text = htmlspecialchars(trim($text), ENT_QUOTES);
+    if (1 === get_magic_quotes_gpc())
+    {
+        $text = stripslashes($text);
+    }
+    /*$text = nl2br($text);*/
+    return $text;
+};
+
+?>
+

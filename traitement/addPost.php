@@ -15,6 +15,10 @@ if(!isset($_SESSION["id"])) {
 
     $date = date('Y-m-d h:i:s', time());
 
+
+CheckString ($_POST['Text1']);
+CheckString ($_POST['titrepost']);
+
 if(isset($_POST['Text1'],$_POST['titrepost'],$_POST['writeMsgSubmit'])) {
 
     $sql2 = "INSERT INTO ecrit VALUES(NULL,?,?,?,?,?,?)";
