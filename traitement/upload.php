@@ -55,8 +55,8 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 
-
-            /*$updateavatar = $bdd->prepare('UPDATE user SET avatar = :avatar WHERE id = :id');
+/*
+            $updateavatar = $bdd->prepare('UPDATE user SET avatar = :avatar WHERE id = :id');
             $updateavatar->execute(array(
                 'avatar' => $_SESSION['id'].".".$extensionUpload,
                 'id' => $_SESSION['id']
@@ -67,7 +67,7 @@ if ($uploadOk == 0) {
 
         $query2 = $pdo->prepare($sql2);
         $query2->execute(array(
-            'avatar' => $_SESSION['id'].".".$imageFileType,
+            'avatar' => $_FILES["fileToUpload"]["name"]/*.".".$imageFileType*/,
             'id' => $_SESSION['id']
         ));
 
