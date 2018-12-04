@@ -74,9 +74,10 @@ if ($imageUpload == true) {
 
     $date = date('Y-m-d H:i:s', time());
 
-
+/*
 CheckString ($_POST['Text1']);
 CheckString ($_POST['titrepost']);
+*/
 
 if(isset($_POST['Text1'],$_POST['titrepost'],$_POST['writeMsgSubmit'])) {
 
