@@ -1,5 +1,5 @@
 <?php
-  $sql = "SELECT email FROM user WHERE id=".$_SESSION['id'];
+  $sql = "SELECT * FROM user WHERE id=".$_SESSION['id'];
   $query = $pdo->prepare($sql);
   $query->execute();
 
@@ -36,23 +36,24 @@
 
   </div>
 
-  <div class="FormCGTDATA form2" id="cgt__PDP">
-    <h1>Changez votre PDP!</h1>
-    <form method="post" action="">
-      <label for="actual__img">Photo de profil actuelle</label>
-        <img src="img/fleurs-bleuesv2.jpg" alt="logo" class="myProfile__img" id="actual__img">
-        <br>
-        <br>
-        <label for="fileToUpload">Changez de photo de profil</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+    <?php
 
-        <br>
-        <br>
+    echo " <div class='FormCGTDATA form2' id='cgt__PDP'>";
+    echo "<h1>Changez votre PDP!</h1>";
+      echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'> ";
+      echo " <label for='actual__img'>Photo de profil actuelle</label>";
+          echo "<img src='uploads/" . $line['avatar'] . "' alt='Photo de profil' class='myProfile__img' id='actual__img'>";
+        echo "<br><br>";
+        echo "<label for='fileToUpload''>Changez de photo de profil</label>";
+          echo "<input type='file' name='fileToUpload'>";
 
-        <input type="submit" name="send" value="Confirmer">
-    </form>
+        echo "<br><br>";
+
+          echo "<input type='submit' name='submit_avatar'></form>";
 
 
-  </div>
+  echo "</div>";
+
+    ?>
 </div>
 </div>
