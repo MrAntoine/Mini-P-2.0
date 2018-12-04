@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -18,11 +18,39 @@
             <input type="submit" name="send" value="Entrez sur FoxBook !">
         </form>
     </div>
-    <br>
+    <br>-->
+
+    <?php
+
+    //LOGIN
+    echo "<div class=\"wrapper\"><div class=\"Form form1\">
+        <img src=\"img/logoSite.png\" class=\"logo-form\">
+        <h1>Identifiez-vous !</h1>";
+    echo "<form action=\"index.php?action=connexion\" method=\"POST\">
+<input type=\"text\" placeholder=\"Login\" name=\"login\" required>
+<input type=\"password\" placeholder=\"Password\" name=\"mdp\" required>
+
+<input type=\"submit\" value=\"Se connecter\">
+</form>";
+
+    //CREATION COMPTE
+
+    echo "<div class=\"Form form2\">
+        <h1>Créez votre compte !</h1>";
+    echo "<form method=\"post\" action=\"index.php?action=register\" name=\"creation\">
+            <input type=\"text\" required name=\"login\" placeholder=\"Entrez votre nom\">
+            <input type=\"email\" required name=\"email\" placeholder=\"Entrez votre adresse e-mail\">
+            <input type=\"password\" required name=\"mdp\" placeholder=\"Entrez votre mot de passe\">";
+    echo "<input type=\"submit\" name=\"send\" value=\"Entrez sur FoxBook !\">
+        </form>
+    </div></div>";
 
 
 
+    ?>
 
+
+<!--
     <div class="Form form2">
         <h1>Créez votre compte !</h1>
         <form method="post" action="/traitement/register.php">
@@ -36,9 +64,9 @@
 </div>
 
 </body>
-</html>
+</html>-->
 
-<!-- <?php
+<!--  <?php
 echo "<br><br><br><br><br><br>";
 echo "<form action=\"index.php?action=connexion\" method=\"POST\">
 <input type=\"text\" placeholder=\"Login\" name=\"login\" required>
@@ -49,4 +77,4 @@ echo "<form action=\"index.php?action=connexion\" method=\"POST\">
 
 echo "<br><br><br><br><br><br>";
 
-?> -->
+?>-->
