@@ -70,24 +70,24 @@ if ($ok == false) {
     creerPost($_SESSION['id']);
 
     // parcours des publications
-    while($line = $query->fetch()) {
+    while ($line = $query->fetch()) {
 
         $query2->execute(array($line["idAuteur"]));
-        $line2= $query2->fetch();
+        $line2 = $query2->fetch();
 
         echo "<div class='article margin anim'>";
-        echo "<div class='img_article'><img src='uploads/".$line2['avatar']."' alt='Photo de profil'</div>";
-        echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
+        echo "<div class='img_article'><img src='uploads/" . $line2['avatar'] . "' alt='Photo de profil'></div>";
+        echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=" . $line["idAuteur"] . "'>" . $line2["login"] . "</a></p>";
         echo "</a>";
-        echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
+        echo "<div class='date_article'>" . $line["dateEcrit"] . "</div>";
         echo "<div class='article-corps anim'>";
-        echo"<p>". $line["titre"] ."</p>";
-        echo"<br><p>". $line["contenu"] ."</p>";
+        echo "<p>" . $line["titre"] . "</p>";
+        echo "<br><p>" . $line["contenu"] . "</p>";
 
         echo "<form method='POST' action='index.php?action=delPost'>";
-        echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
-        echo "<input type='hidden' name='idMur' value='".$id."'>";
-        if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $id) {
+        echo "<input type='hidden' name='idPost' value='" . $line['id'] . "'>";
+        echo "<input type='hidden' name='idMur' value='" . $id . "'>";
+        if ($_SESSION["id"] == $line["idAuteur"] || $_SESSION["id"] == $id) {
             echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
         }
 
@@ -95,21 +95,21 @@ if ($ok == false) {
         // Vérifié si un like est deja mis..
         $likeSql = "SELECT * FROM aime WHERE (idUtilisateur=? AND idEcrit=?)";
         $likeQuery = $pdo->prepare($likeSql);
-        $likeQuery->execute(array($_SESSION['id'],$line['id']));
+        $likeQuery->execute(array($_SESSION['id'], $line['id']));
         $likeLine = $likeQuery->fetch();
-        if($likeLine == false){
+        if ($likeLine == false) {
             $style = "style='background-color:grey'";
         } else {
             $style = "style='background-color:red'";// style css
         }
         echo "<form method='POST' action='index.php?action=like'>";
-        echo "<input type='hidden' name='idPost' value='".$line['id']."'>";
-        echo "<input type='submit' name='like' value='Like' class='postMsg'" . $style ." ></form>";
+        echo "<input type='hidden' name='idPost' value='" . $line['id'] . "'>";
+        echo "<input type='submit' name='like' value='Like' class='postMsg'" . $style . " ></form>";
         echo "</div>";
 
-        echo"<div class='texte-article'>";
-        echo"</div>";
-        echo"</div>";
+        echo "<div class='texte-article'>";
+        echo "</div>";
+        echo "</div>";
 
     }
     echo "</div>";
