@@ -12,7 +12,7 @@ if($line==false){
 } else {
     $_SESSION['id'] = $line['id'];
     $_SESSION['login'] = $line['login'];
-    header("Location: exempleMur.html");
+    header("Location: index.php");
 
 }
 

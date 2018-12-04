@@ -1,11 +1,25 @@
+<?php
+  $sql = "SELECT email FROM user WHERE id=".$_SESSION['id'];
+  $query = $pdo->prepare($sql);
+  $query->execute();
+
+  $line = $query->fetch();
+?>
+
+
+
 <div class="wrapper">
   <div class="FormCGTDATA form2" id="cgt__DATA">
     <h1>Changez vos TRUCS !</h1>
     <form method="post" action="">
-        <label for="nom">Nom actuel : REQUETE POUR LE NOM</label>
+        <label for="nom">Nom actuel :
+          <?php echo $_SESSION['login'];?>
+        </label>
         <input type="text" id="nom" required name="name" placeholder="Votre nouveau nom">
         <br>
-        <label for="email">Email actuel : REQUETE POUR L'EMAIL</label>
+        <label for="email">Email actuel :
+          <?php echo $line['email'] ?>
+        </label>
         <input type="email" id="email" required name="mail-address" placeholder="Votre nouvelle adresse e-mail">
         <br>
         <label for="password">Votre nouveau mot de passe</label>
@@ -16,6 +30,7 @@
         <input type="password" required name="passwordcf">
         <input type="submit" name="send" value="Confirmer">
     </form>
+
 
 
   </div>
