@@ -4,6 +4,12 @@
   $query->execute();
 
   $line = $query->fetch();
+
+
+// Afficher le pseudo + avatar
+$id =$_SESSION['id'];
+include('vues/affiche_avatar.php');
+
 ?>
 
 
