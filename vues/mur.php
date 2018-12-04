@@ -54,7 +54,7 @@ if ($ok == false) {
 
     $sql ="SELECT * FROM ecrit WHERE idAmi=? order by dateEcrit DESC";
 
-    $sql2 = "SELECT login FROM user WHERE (id=?)";
+    $sql2 = "SELECT * FROM user WHERE (id=?)";
 
     $query = $pdo->prepare($sql);
 
@@ -76,7 +76,7 @@ if ($ok == false) {
         $line2= $query2->fetch();
 
         echo "<div class='article margin anim'>";
-        echo "<div class='img_article'></div>";
+        echo "<div class='img_article'><img src='uploads/".$line2['avatar']."' alt='Photo de profil'</div>";
         echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=". $line["idAuteur"] ."'>".$line2["login"]."</a></p>";
         echo "</a>";
         echo "<div class='date_article'>". $line["dateEcrit"] ."</div>";
