@@ -10,17 +10,18 @@
 
 <div class="wrapper">
   <div class="FormCGTDATA form2" id="cgt__DATA">
-    <h1>Changez vos TRUCS !</h1>
+    <h1>Changez vos informations !</h1>
     <form method="post" action="">
-        <label for="nom">Nom actuel :
+        <!-- <label for="nom">Nom actuel :
           <?php echo $_SESSION['login'];?>
-        </label>
-        <input type="text" id="nom" required name="name" placeholder="Votre nouveau nom">
+        </label> -->
+        <input type="text" id="nom" required name="name" value="<?php echo $_SESSION['login'];?>">
+ <!-- placeholder="Votre nouveau nom"  -->
         <br>
-        <label for="email">Email actuel :
+        <!-- <label for="email">Email actuel :
           <?php echo $line['email'] ?>
-        </label>
-        <input type="email" id="email" required name="mail-address" placeholder="Votre nouvelle adresse e-mail">
+        </label> -->
+        <input type="email" id="email" required name="mail-address" value="<?php echo $line['email'];?>">
         <br>
         <label for="password">Votre nouveau mot de passe</label>
         <input type="password" id="password" required name="password">

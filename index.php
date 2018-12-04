@@ -53,18 +53,18 @@ if (isset($_SESSION['info'])) {
 
 <header id="main-header">
     <h3>FoxBook</h3>
-    <!-- <?php
+    <?php
     if (isset($_SESSION['id'])) {
-        echo "<li>Bonjour " . $_SESSION['login'] . "<br/><a href='index.php?action=deconnexion'>Deconnexion</a></li>";
+        // echo "<li>Bonjour " . $_SESSION['login'] . "<br/><a href='index.php?action=deconnexion'>Deconnexion</a></li>";
+        include('vues/nav.php');
     } else {
-        echo "<li><a href='index.php?action=login'>Login</a></li>";
+        header("Location:index.php?action=login");
+         // echo "<li><a href='index.php?action=login'>Login</a></li>"
     }
-    ?> -->
+    ?>
 </header>
 
-<?php
-  include('vues/nav.php');
- ?>
+
 
 <!-- <nav>
     <ul>
