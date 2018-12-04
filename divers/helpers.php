@@ -35,7 +35,7 @@ function creerPost($id) {
     echo "</div><br/>";
 
     echo "<form method='post' action='index.php?action=upload' enctype='multipart/form-data'> ";
-    echo "<input type='file' name='image_post'>";
+    echo "<input type='file' name='fileToUpload'>";
     echo "<input type='hidden' value=''>";
     echo "<input type='submit' name='submit_image_post'></form>";
 }

@@ -7,7 +7,6 @@ include("divers/helpers.php");
 include("config/actions.php");
 session_start();
 ob_start(); // Je démarre le buffer de sortie : les données à afficher sont stockées
-date_default_timezone_set('Europe/Paris');
 
 ?>
 <!DOCTYPE html>

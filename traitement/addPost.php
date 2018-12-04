@@ -13,7 +13,7 @@ if(!isset($_SESSION["id"])) {
     header("Location:index.php?action=login");
 }
 
-    $date = date('Y-m-d h:i:s', time());
+    $date = date('Y-m-d H:i:s', time());
 
 
 CheckString ($_POST['Text1']);

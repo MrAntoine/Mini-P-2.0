@@ -18,7 +18,6 @@ $listeDesActions = array(
     "addPost" => "traitement/addPost.php",
     "delPost" => "traitement/delPost.php",
     "searchProfile" => "vues/search_profile.php",
-    "commentPost" => "vues/commentPost.php",
     "like" => "vues/like.php",
     "suggest" => "vues/suggest_friends.php",
     "upload" => "traitement/upload.php",

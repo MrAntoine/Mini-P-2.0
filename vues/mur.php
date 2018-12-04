@@ -90,10 +90,6 @@ if ($ok == false) {
         if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $id) {
             echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
         }
-        /*
-        echo "<form method='POST' action='javascript:AfficheComment();'>";
-        echo "<input type='submit' name='comment' value='Commenter' class='postMsg' ></form>";
-        */
 
 
         // Vérifié si un like est deja mis..
