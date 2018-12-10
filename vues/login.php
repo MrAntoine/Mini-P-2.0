@@ -20,34 +20,25 @@
     </div>
     <br>-->
 
-    <?php
+<div class="wrapper"><div class="Formlogin form1">
+        <img src="img/logoSite.png" class="logo-formlogin">
+        <h1>Identifiez-vous !</h1>
+     <form action="index.php?action=connexion" method="POST">
+<input type="text" placeholder="Login" name="login" required>
+<input type="password" placeholder="Password" name="mdp" required>
 
-    //LOGIN
-    echo "<div class=\"wrapper\"><div class=\"Form form1\">
-        <img src=\"img/logoSite.png\" class=\"logo-form\">
-        <h1>Identifiez-vous !</h1>";
-    echo "<form action=\"index.php?action=connexion\" method=\"POST\">
-<input type=\"text\" placeholder=\"Login\" name=\"login\" required>
-<input type=\"password\" placeholder=\"Password\" name=\"mdp\" required>
+<input type="submit" value="Se connecter">
+</form>
 
-<input type=\"submit\" value=\"Se connecter\">
-</form>";
-
-    //CREATION COMPTE
-
-    echo "<div class=\"Form form2\">
-        <h1>Créez votre compte !</h1>";
-    echo "<form method=\"post\" action=\"index.php?action=register\" name=\"creation\">
-            <input type=\"text\" required name=\"login\" placeholder=\"Entrez votre nom\">
-            <input type=\"email\" required name=\"email\" placeholder=\"Entrez votre adresse e-mail\">
-            <input type=\"password\" required name=\"mdp\" placeholder=\"Entrez votre mot de passe\">";
-    echo "<input type=\"submit\" name=\"send\" value=\"Entrez sur FoxBook !\">
+     <div class="Formlogin form2">
+        <h1>Créez votre compte !</h1>
+    <form method="post" action="index.php?action=register" name="creation">
+            <input type="text" required name="login" placeholder="Entrez votre nom">
+            <input type="email" required name="email" placeholder="Entrez votre adresse e-mail">
+            <input type="password" required name="mdp" placeholder="Entrez votre mot de passe">
+    <input type="submit" name="send" value="Entrez sur FoxBook !">
         </form>
-    </div></div>";
-
-
-
-    ?>
+    </div></div>
 
 
 <!--

@@ -21,6 +21,7 @@ $listeDesActions = array(
     "like" => "vues/like.php",
     "suggest" => "vues/suggest_friends.php",
     "upload" => "traitement/upload.php",
+    "uploadProfile" => "traitement/uploadProfile.php",
     "actus" => "vues/filsActus.php",
     "register" => "traitement/register.php"
 );
