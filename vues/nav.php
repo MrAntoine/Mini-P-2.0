@@ -3,7 +3,7 @@
   <img src="img/fleurs-bleuesv2.jpg" alt="logo" >
 </a>-->
   <div class="white-4-respNav"></div>
-  <a href="index.php" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
+  <a href="index.php?action=actus" class="logoNav"><img src="img/logoSite.png" class="lol"></a>
   <div class="searchbox">
     <form method="POST" action="index.php?action=searchProfile">
       <input type="text" name="search_profile" placeholder="Rechercher">

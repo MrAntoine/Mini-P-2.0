@@ -180,6 +180,7 @@ nav ul li a:hover {
 
 .wrapper{
   margin: auto;
+  min-height: 600px;
   margin-top: 10%;
   width: 50%;
   background-color: #b57600;
@@ -187,6 +188,7 @@ nav ul li a:hover {
   padding: 0;
   text-align: center;
   padding-bottom: 30px;
+  position: relative;
 }
 
 .avatar {
@@ -372,6 +374,7 @@ footer {
 
 .FormCGTDATA{
     width: 320px;
+
     background: #fff;
     color: #000;
     position: relative;
@@ -381,6 +384,7 @@ footer {
     padding: 70px 30px;
     display: inline-block;
     border-radius: 50px;
+    position: absolute; top: 0px;
 
 }
 
@@ -448,6 +452,19 @@ footer {
 {
     /* color: #ffc107; */
 }
+
+.form1 {
+  height: 550px;
+  position: absolute;
+  left: 20px;
+}
+
+.form2 {
+  height: 550px;
+  position: absolute;
+  right: 50px;
+}
+
 
 
 .textPost {
@@ -609,6 +626,7 @@ footer {
 
     .wrapper {
       position: absolute;
+      /* min-height: 600px; */
       /* margin: 80px 10% 0px 8%; */
       border-top: 2px solid white;
       border-right: 2px solid white;

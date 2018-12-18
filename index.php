@@ -51,7 +51,7 @@ if (isset($_SESSION['info'])) {
 
 
 <header id="main-header">
-    <h3>FoxBook</h3>
+    <!-- <h3>FoxBook</h3> -->
     <?php
     if (isset($_SESSION['id'])) {
         // echo "<li>Bonjour " . $_SESSION['login'] . "<br/><a href='index.php?action=deconnexion'>Deconnexion</a></li>";

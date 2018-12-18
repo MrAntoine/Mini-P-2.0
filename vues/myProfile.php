@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="FormCGTDATA form2" id="cgt__DATA">
+  <div class="FormCGTDATA form1" id="cgt__DATA">
     <h1>Changez vos informations !</h1>
     <form method="post" action="">
         <!-- <label for="nom">Nom actuel :
