@@ -7,29 +7,28 @@
  */
 FakeConnexion();
 
-if(!isset($_SESSION["id"])) {
-    // On n est pas connecté, il faut retourner à la pgae de login
-    header("Location:index.php?action=login");
-}
+if(isset($_SESSION["id"])) {
+
 
 // Verifions si on est amis avec cette personne
-$sql = "SELECT idAuteur FROM ecrit WHERE id=?";
-$query = $pdo->prepare($sql);
-$query->execute(array($_POST['idPost']));
-$line = $query->fetch();
+    $sql = "SELECT idAuteur FROM ecrit WHERE id=?";
+    $query = $pdo->prepare($sql);
+    $query->execute(array($_POST['idPost']));
+    $line = $query->fetch();
 
-/*if($line == $_SESSION['id']){*/
-if ($_SESSION["id"] ==  $line["idAuteur"] || $_SESSION["id"] == $_POST['idAmi']) {
+    /*if($line == $_SESSION['id']){*/
+    if ($_SESSION["id"] == $line["idAuteur"] || $_SESSION["id"] == $_POST['idAmi']) {
 
-$sql2 = "DELETE FROM ecrit WHERE id=?";
-$query2 = $pdo->prepare($sql2);
-$query2->execute(array($_POST['idPost']));
+        $sql2 = "DELETE FROM ecrit WHERE id=?";
+        $query2 = $pdo->prepare($sql2);
+        $query2->execute(array($_POST['idPost']));
 
-/*header("Location:index.php?action=mur");*/
-header("location:index.php?action=mur&id=".$_POST['idMur']);
+        /*header("Location:index.php?action=mur");*/
+        header("location:index.php?action=mur&id=" . $_POST['idMur']);
 
-}else {
-    echo "Vous n'avez pas écrit cette publication";
+    } else {
+        echo "Vous n'avez pas écrit cette publication";
+    }
+
 }
-
 ?>

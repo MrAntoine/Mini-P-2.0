@@ -56,9 +56,6 @@ if (isset($_SESSION['info'])) {
     if (isset($_SESSION['id'])) {
         // echo "<li>Bonjour " . $_SESSION['login'] . "<br/><a href='index.php?action=deconnexion'>Deconnexion</a></li>";
         include('vues/nav.php');
-    } else {
-        header("Location:index.php?action=login");
-         // echo "<li><a href='index.php?action=login'>Login</a></li>"
     }
     ?>
 </header>
@@ -84,7 +81,7 @@ if (isset($_SESSION['info'])) {
             if (isset($_GET["action"])) {
                 $action = $_GET["action"];
             } else {
-                $action = "accueil";
+                $action = "login";
             }
 
             // Est ce que cette action existe dans la liste des actions
