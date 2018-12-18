@@ -198,6 +198,8 @@ nav ul li a:hover {
   text-align: center;
   text-decoration: none;
   color : #b57600;
+  width: 200px;
+  height: 200px;
 }
 
 .avatar:hover {
@@ -207,8 +209,8 @@ nav ul li a:hover {
 
 .avatar img {
   border-radius: 50%;
-  width : 200px;
-  height: 200px;
+  width : 100%;
+  height: auto;
   border : 5px solid #b57600;
 }
 
