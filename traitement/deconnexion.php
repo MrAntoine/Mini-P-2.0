@@ -1,5 +1,5 @@
 <?php
 
 session_destroy();
-header("Location: exempleMur.html");
+header("Location: index.php");
 ?>
