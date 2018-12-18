@@ -1,24 +1,34 @@
+<?php
+$sql = "SELECT * FROM user WHERE id=?";
+$query = $pdo->prepare($sql);
+$query->execute(array(($_SESSION['id'])));
+
+$line = $query->fetch();
+
+
+// Afficher le pseudo + avatar
+$id =$_SESSION['id'];
+include('vues/affiche_avatar.php');
+
+?>
+
+
 <div class="wrapper">
   <div class="FormCGTDATA form1" id="cgt__DATA">
     <h1>Changez vos informations !</h1>
-    <form method="post" action="">
-        <!-- <label for="nom">Nom actuel :
-          <?php echo $_SESSION['login'];?>
-        </label> -->
-        <input type="text" id="nom" required name="name" value="<?php echo $_SESSION['login'];?>">
- <!-- placeholder="Votre nouveau nom"  -->
+    <form method="post" action="index.php?action=changeinfos">
+        <label for="email">Pseudo actuel :</label>
+        <input type="text" id="nom" name="pseudo" value="<?php echo $line['login'];?>">
         <br>
-        <!-- <label for="email">Email actuel :
-          <?php echo $line['email'] ?>
-        </label> -->
-        <input type="email" id="email" required name="mail-address" value="<?php echo $line['email'];?>">
+        <label for="email">Email actuel :</label>
+        <input type="email" id="email"  name="mail-address" value="<?php echo $line['email'];?>">
         <br>
         <label for="password">Votre nouveau mot de passe</label>
-        <input type="password" id="password" required name="password">
+        <input type="password" id="password" name="password">
         <br>
 
         <label for="passwordcf">Confirmez votre nouveau mot de passe</label>
-        <input type="password" required name="passwordcf">
+        <input type="password" name="passwordcf">
         <input type="submit" name="send" value="Confirmer">
     </form>
 
