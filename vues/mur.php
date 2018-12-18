@@ -38,7 +38,9 @@ if ($ok == false) {
     $query3 = $pdo->prepare($sql3);
     $query3->execute(array($_SESSION['id'], $id, $id, $_SESSION['id']));
     $line3 = $query3->fetch();
+    echo "<div class='wrapper pasamis'>";
     if ($line3 == false) {
+
         echo "<p class='erreur_pas_ami'>Vous n êtes pas encore ami, vous ne pouvez voir son mur !!</p>";
         echo "<form method='POST' action='index.php?action=addFriend' >";
         echo "<input type='hidden' name='id_futur_ami' value='$id'>";
@@ -46,6 +48,7 @@ if ($ok == false) {
     } else {
         echo "<p class='erreur_ami_attente'>Une demande d'amis est déjà en attente !</p>";
     }
+    echo "</div>";
     // Afficher le pseudo + avatar
     include('vues/affiche_avatar.php');
 
