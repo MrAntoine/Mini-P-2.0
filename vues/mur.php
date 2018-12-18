@@ -82,7 +82,9 @@ if ($ok == false) {
         echo "<div class='date_article'>" . $line["dateEcrit"] . "</div>";
         echo "<div class='article-corps anim'>";
         echo "<p>" . $line["titre"] . "</p>";
-        echo "<div class='img_publication'><img src='uploads/" . $line['image'] . "' alt='Image Publication'></div>";
+        if($line['image'] == true) {
+            echo "<div class='img_publication'><img src='uploads/" . $line['image'] . "' alt='Image Publication'></div>";
+        }
         echo "<br><p>" . $line["contenu"] . "</p>";
 
         echo "<form method='POST' action='index.php?action=delPost'>";
