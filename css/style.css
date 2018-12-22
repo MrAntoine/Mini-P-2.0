@@ -242,8 +242,22 @@ nav ul li a:hover {
   padding: 5px;
 }
 
-.sideFriends ul li {
-  list-style: none;
+.sideFriends a{
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sideFriends form {
+  display: inline-block;
+  float: right;
+  vertical-align: middle;
+}
+
+.sideFriends form input {
+  padding: 5px;
+  color: #b57600;
+  background-color: #fff;
 }
 
 
@@ -711,6 +725,10 @@ footer {
     .form2 {
       height: 350px;
       padding-top: 20px;
+    }
+
+    footer {
+      display: none;
     }
 
 }
