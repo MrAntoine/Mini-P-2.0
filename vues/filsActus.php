@@ -11,10 +11,6 @@ FakeConnexion();
 if (isset($_SESSION["id"])) {
 
 
-// Afficher le pseudo + avatar
-//include('vues/affiche_avatar.php');
-
-
 // Creation de post
     creerPost($_SESSION['id']);
 
@@ -28,6 +24,8 @@ if (isset($_SESSION["id"])) {
     $sql2 = "SELECT * FROM ecrit WHERE idAuteur=? order by dateEcrit DESC";
 
     $query2 = $pdo->prepare($sql2);
+
+
 
     while ($line = $query->fetch()) {
         $query2->execute(array($line['id']));
@@ -91,5 +89,10 @@ if (isset($_SESSION["id"])) {
     echo "</div>";
 
 }
+
+
+// Afficher le pseudo + avatar
+include('vues/affiche_avatar.php');
+
 
 ?>
