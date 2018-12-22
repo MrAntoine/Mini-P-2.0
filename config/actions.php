@@ -24,5 +24,6 @@ $listeDesActions = array(
     "uploadProfile" => "traitement/uploadProfile.php",
     "changeinfos" => "traitement/changeInfos.php",
     "actus" => "vues/filsActus.php",
+    "updatemdp" => "traitement/updatemdp.php",
     "register" => "traitement/register.php"
 );
