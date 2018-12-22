@@ -689,46 +689,48 @@ footer {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .form1 {
+      height: 270px;
+      /* border: 1px solid red; */
+    }
+
+    .form2 {
+      height: 350px;
+      padding-top: 20px;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* FORM INSCRIPTION-CONNEXION */
 
 .Formlogin{
-    width: 320px;
-    background: #fff;
-    color: #000;
-    position: relative;
-    margin-left: 90px;
-    /* transform: translate(-50%,-50%); */
-    box-sizing: border-box;
-    padding: 70px 30px;
-    display: block;
-    border-radius: 50px;
+  width: 80%;
+  background: #fff;
+  color: #000;
+  position: relative;
+  margin: auto;
+  height: auto;
+  /* margin-left: 90px; */
+  /* transform: translate(-50%,-50%); */
+  box-sizing: border-box;
+  padding: 70px 30px 0px 30px;
+  display: block;
+  border-radius: 50px;
 }
-
-.form1 {
-  height: 270px;
-  /* border: 1px solid red; */
-}
-
-.form2 {
-  height: 350px;
-  padding-top: 20px;
-}
-
-
 .logo-formlogin{
     width: 100px;
     height: 100px;
