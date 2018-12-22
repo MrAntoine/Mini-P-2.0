@@ -85,7 +85,7 @@ if (isset($_SESSION["id"])) {
 
 }
 
-
+$id = $line["id"];
 // Afficher le pseudo + avatar
 include('vues/affiche_avatar.php');
 
