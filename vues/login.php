@@ -28,6 +28,8 @@
     <form action="index.php?action=connexion" method="POST">
       <input type="text" placeholder="Login" name="login" required>
       <input type="password" placeholder="Password" name="mdp" required>
+      <label for="rememberMe">Remember me !</label>
+      <input id="rememberMe" type="checkbox" name="rememberMe" value="Remember me !">
       <input type="submit" value="Se connecter">
     </form>
 
@@ -40,6 +42,7 @@
       <input type="text" required name="login" placeholder="Entrez votre nom">
       <input type="email" required name="email" placeholder="Entrez votre adresse e-mail">
       <input type="password" required name="mdp" placeholder="Entrez votre mot de passe">
+      <input type="password" required name="mdp-confirm" placeholder="Confirmez votre mot de passe">
       <input type="submit" name="send" value="Entrez sur FoxBook !">
     </form>
   </div>
