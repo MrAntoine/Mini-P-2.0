@@ -35,7 +35,7 @@ if (isset($_SESSION["id"])) {
 
 
             echo "<div class='article margin anim'>";
-            echo "<div class='img_article'></div>";
+            echo "<div class='img_article'><img src='uploads/" . $line['avatar'] . "' alt='Photo de profil'></div>";
             echo "<p class='nomPersonne'>Posté par <a href='index.php?action=mur&id=" . $line2["idAuteur"] . "'>" . $line["login"] . "</a></p>";
             echo "</a>";
             echo "<div class='date_article'>" . $line2["dateEcrit"] . "</div>";
