@@ -29,12 +29,10 @@ include('vues/affiche_avatar.php');
         <h1>Reinitialiser le mot de passe</h1>
         <form method="POST" action="index.php?action=updatemdp">
 
-            <label for="password">Votre nouveau mot de passe</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" placeholder="Votre nouveau mot de passe">
             <br>
 
-            <label for="passwordcf">Confirmez votre nouveau mot de passe</label>
-            <input type="password" name="passwordcf">
+            <input type="password" name="passwordcf" placeholder="Confirmez votre nouveau mot de passe">
 
             <input type="submit" name="send2" value="Confirmer">
         </form>
