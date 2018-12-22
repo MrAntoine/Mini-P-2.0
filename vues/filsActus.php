@@ -41,6 +41,9 @@ if (isset($_SESSION["id"])) {
             echo "<div class='date_article'>" . $line2["dateEcrit"] . "</div>";
             echo "<div class='article-corps anim'>";
             echo "<p>" . $line2["titre"] . "</p>";
+            if ($line2['image'] == true) {
+                echo "<div class='img_publication'><img src='uploads/" . $line2['image'] . "' alt='Image Publication'></div>";
+            }
             echo "<br><p>" . $line2["contenu"] . "</p>";
 
             echo "<form method='POST' action='index.php?action=delPost'>";
