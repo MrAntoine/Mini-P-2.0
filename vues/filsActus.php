@@ -64,23 +64,15 @@ if (isset($_SESSION["id"])) {
             $likeQuery = $pdo->prepare($likeSql);
             $likeQuery->execute(array($_SESSION['id'], $line2['id']));
             $likeLine = $likeQuery->fetch();
-            print_r($likeLine);
             if ($likeLine == false) {
-                //style css
-                ?>
-                <style> .likes {
-                        background-color:;
-                    }</style> <?php
+                $style = "style='background-color:grey'";
             } else {
-                // style css
-                ?>
-                <style> .likes {
-                        background-color: red;
-                    }</style> <?php
+                $style = "style='background-color:red'";// style css
             }
+
             echo "<form method='POST' action='index.php?action=like'>";
             echo "<input type='hidden' name='idPost' value='" . $line2['id'] . "'>";
-            echo "<input type='submit' name='like' value='Like' class='postMsg likes' ></form>";
+            echo "<input type='submit' name='like' value='Like' class='postMsg'" . $style . " ></form>";
             echo "</div>";
 
             echo "<div class='texte-article'>";
