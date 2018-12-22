@@ -579,7 +579,7 @@ footer {
     }
 
     .header-toogle {
-      position: fixed; top: 25px; right: 10px;
+      position: fixed; top: 30px; right: 25px;
       display: block;
     }
 
@@ -673,11 +673,19 @@ footer {
     }
 
     .avatar {
-
+      display: none;
     }
 
-    footer {
-      display: none;
+
+    /*
+    FORM CHOIX IMG
+    */
+    {
+      width: 100%;
+    font-size: 12px;
+    text-align: center;
+    /* vertical-align: middle; */
+    padding-top: 7px;
     }
 
 
