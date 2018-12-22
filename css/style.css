@@ -322,9 +322,20 @@ nav ul li a:hover {
   border: 2px solid #b57600;
 }
 
+.img_publication {
+  text-align: center;
+}
+
 .img_publication img {
-  max-width: 100%;
+  max-height: 300px;
+  display: inline-block;
   height: auto;
+  margin: auto;
+}
+
+.article-corps p {
+  display:inline-block;
+
 }
 
 .noUserText {
@@ -349,6 +360,16 @@ nav ul li a:hover {
   padding: 5px;
   color: black;
 }
+
+.nomPersonne a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nomPersonne a:hover {
+  text-decoration: none;
+}
+
 .date_article {
   display: inline-block;
   float: right;
