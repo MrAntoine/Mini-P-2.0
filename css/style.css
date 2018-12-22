@@ -727,6 +727,10 @@ footer {
       padding-top: 20px;
     }
 
+    footer {
+      display: none;
+    }
+
 }
 
 /* FORM INSCRIPTION-CONNEXION */
