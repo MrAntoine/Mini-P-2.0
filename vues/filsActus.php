@@ -15,7 +15,8 @@ if (isset($_SESSION["id"])) {
     creerPost($_SESSION['id']);
 
 
-    $sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUtilisateur1=?) OR ?";
+    //$sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUtilisateur1=?) OR ?";
+    $sql = "SELECT * FROM user WHERE id IN ( SELECT user.id FROM user INNER JOIN lien ON idUtilisateur1=user.id AND etat='ami' AND idUtilisateur2=? UNION SELECT user.id FROM user INNER JOIN lien ON idUtilisateur2=user.id AND etat='ami' AND idUtilisateur1=? UNION SELECT ?)";
 
     $query = $pdo->prepare($sql);
 
@@ -29,7 +30,6 @@ if (isset($_SESSION["id"])) {
 
     while ($line = $query->fetch()) {
         $query2->execute(array($line['id']));
-
 
         while ($line2 = $query2->fetch()) {
 

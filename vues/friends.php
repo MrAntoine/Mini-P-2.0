@@ -50,7 +50,7 @@ if(isset($_SESSION["id"])) {
     while ($line = $query->fetch()) {
         //Affichage
         echo " <div class='friend margin anim'> ";
-        echo "<div class='img_article'><img src='uploads/" . $line2['avatar'] . "' alt='Photo de profil'></div>";
+        echo "<div class='img_article'><img src='uploads/" . $line['avatar'] . "' alt='Photo de profil'></div>";
         echo "<a class='nomPersonne' href='index.php?action=mur&id" . $line["id"] . "'>" . $line["login"] . "</a>";
         echo "<a class='profil_amis' href='index.php?action=mur&id" . $line["id"] . "'>Voir le profil</a>";
         echo "<form method='POST' action='index.php?action=delFriend' >";
