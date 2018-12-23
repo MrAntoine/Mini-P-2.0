@@ -50,13 +50,14 @@ if (isset($_SESSION["id"])) {
             echo "<input type='hidden' name='idPost' value='" . $line2['id'] . "'>";
             // echo "<input type='hidden' name='idMur' value='" . $id . "'>";
             if ($_SESSION["id"] == $line2["idAuteur"]) {
-                echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg' ></form>";
+                echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg'>";
             }
 
             /*
             echo "<form method='POST' action='javascript:AfficheComment();'>";
-            echo "<input type='submit' name='comment' value='Commenter' class='postMsg' ></form>";
+            echo "<input type='submit' name='comment' value='Commenter' class='postMsg' >
             */
+            echo "</form>";
 
 
             // Vérifié si un like est deja mis..
@@ -67,7 +68,7 @@ if (isset($_SESSION["id"])) {
             if ($likeLine == false) {
                 $style = "style='background-color:grey'";
             } else {
-                $style = "style='background-color:red'";// style css
+                $style = "style='background-color:blue'";// style css
             }
 
             echo "<form method='POST' action='index.php?action=like'>";
