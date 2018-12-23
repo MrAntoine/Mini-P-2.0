@@ -7,8 +7,8 @@
  */
 
 function FakeConnexion (){
-    $_SESSION["id"] = 1;
-    $_SESSION["login"] = "gilles";
+   /* $_SESSION["id"] = 1;
+    $_SESSION["login"] = "gilles";*/
 }
 
 
