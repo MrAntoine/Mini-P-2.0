@@ -28,11 +28,13 @@ if(isset($_SESSION["id"])) {
     if ($line == false) {
         //style css
         $query2->execute(array($_POST['idPost'], $_SESSION['id']));
-        header("Location:index.php?action=mur&id=" . $_POST['idPost'] . "");
+        //header("Location:index.php?action=mur&id=" . $_POST['idPost'] . "");
+        header('Location: ' . $_SERVER['HTTP_REFERER'] );
     } else {
         // style css
         $query3->execute(array($_POST['idPost'], $_SESSION['id']));
-        header("Location:index.php?action=mur&id=" . $_POST['idPost'] . "");
+        //header("Location:index.php?action=mur&id=" . $_POST['idPost'] . "");
+        header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }
 
 }
