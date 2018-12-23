@@ -104,7 +104,7 @@ if(isset($_SESSION["id"])) {
             if ($likeLine == false) {
                 $style = "style='background-color:grey'";
             } else {
-                $style = "style='background-color:red'";// style css
+                $style = "style='background-color:blue'";// style css
             }
             echo "<form method='POST' action='index.php?action=like'>";
             echo "<input type='hidden' name='idPost' value='" . $line['id'] . "'>";
