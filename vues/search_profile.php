@@ -24,7 +24,14 @@ if(isset($_SESSION["id"])) {
     } else {
         echo "<div class=\"userList wrapper\">Liste des utilisateurs : <br/>";
         while ($line = $query->fetch()) {
-            echo "<a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a><br/>";
+            //echo "<a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a><br/>";
+
+            echo "<a href='index.php?action=mur&id=" . $line['id'] . "' class='avatarsuggest'>";
+            echo "<img src='uploads/".$line['avatar']."' alt='Photo de profil' >";
+            echo " <span>" . $line['login'] . "</span>";
+            echo "</a>";
+
+
         }
         echo "</div>";
     }

@@ -256,6 +256,19 @@ nav ul li a:hover {
   border : 5px solid #b57600;
 }
 
+
+
+.avatarsuggest {
+    text-decoration: none;
+}
+
+
+.avatarsuggest img {
+    border-radius: 50%;
+    width : 50px;
+    height: 50px;
+}
+
 .logoNav {
   z-index: 100;
   position: fixed;
