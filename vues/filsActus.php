@@ -50,7 +50,7 @@ if (isset($_SESSION["id"])) {
             echo "<input type='hidden' name='idPost' value='" . $line2['id'] . "'>";
             // echo "<input type='hidden' name='idMur' value='" . $id . "'>";
             if ($_SESSION["id"] == $line2["idAuteur"]) {
-                echo "<input type='submit' name='writeMsg' value='Supprimer' class='postMsg'>";
+                echo "<input type='submit' name='writeMsg' value='' class='postMsg supp'>";
             }
 
             /*
@@ -66,14 +66,14 @@ if (isset($_SESSION["id"])) {
             $likeQuery->execute(array($_SESSION['id'], $line2['id']));
             $likeLine = $likeQuery->fetch();
             if ($likeLine == false) {
-                $style = "style='background-color:grey'";
+                $style = "style='background-color:black'";
             } else {
-                $style = "style='background-color:blue'";// style css
+                $style = "style='background-color:#b57600'";// style css
             }
 
             echo "<form method='POST' action='index.php?action=like'>";
             echo "<input type='hidden' name='idPost' value='" . $line2['id'] . "'>";
-            echo "<input type='submit' name='like' value='Like' class='postMsg'" . $style . " ></form>";
+            echo "<input type='submit' name='like' value='' class='postMsg likes'" . $style . " ></form>";
             echo "</div>";
 
             echo "<div class='texte-article'>";
