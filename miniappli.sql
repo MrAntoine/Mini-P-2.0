@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 23 déc. 2018 à 20:51
+-- Généré le :  Dim 23 déc. 2018 à 20:57
 -- Version du serveur :  5.7.21
 -- Version de PHP :  7.1.16
 
@@ -137,8 +137,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `login`, `mdp`, `email`, `remember`, `avatar`) VALUES
 (1, 'gilles', '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257', 'gilles@toto.fr', '', 'IMG_2922.JPG'),
 (2, 'toto', '1234', 'toto@toto.fr', '', 'IMG_2962.JPG'),
-(3, 'utilisateur3', '1234', 'utilisateur3@toto.fr', '', ''),
-(11, 'toto2', '1234', 'toto2@toto.fr', '', ''),
+(3, 'utilisateur3', '1234', 'utilisateur3@toto.fr', '', 'default-avatar.jpg'),
+(11, 'toto2', '1234', 'toto2@toto.fr', '', 'default-avatar.jpg'),
 (12, 'jesuisenmmi', '*51AF2E76A436659C6FA9C44CA318F624B0D4ABB9', 'mmiorth@gkzl.com', NULL, 'default-avatar.jpg'),
 (13, 'Antoine', '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257', 'antoinevdblycee@gmail.com', NULL, 'default-avatar.jpg');
 COMMIT;
