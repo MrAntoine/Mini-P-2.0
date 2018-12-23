@@ -16,15 +16,23 @@ if (isset($_SESSION["id"])) {
 
     $query->execute(array($_SESSION['id'], $_SESSION['id'], $_SESSION['id']));
 
-    echo "<div class=\"sideFriends\">Suggestion d'amis :";
+    echo "<div class=\"sideFriends\">Suggestion d'amis :<br/>";
 
 
     while ($line = $query->fetch()) {
 
-        echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "'>" . $line['login'] . "</a>";
+
+
+        echo "<br/><a href='index.php?action=mur&id=" . $line['id'] . "' class='avatarsuggest'>";
+        echo "<img src='uploads/".$line['avatar']."' alt='Photo de profil' >";
+        echo " <span>" . $line['login'] . "</span>";
+        echo "</a>";
+
         echo "<form method='POST' action='index.php?action=addFriend' >";
         echo "<input type='hidden' name='id_futur_ami' value='" . $line['id'] . "'>";
         echo "<input type='submit' name='addFriend' value='Demander en ami'></form><br/>";
+
+
     }
     echo "</div>";
 }
