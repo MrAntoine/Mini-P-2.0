@@ -24,7 +24,8 @@ if(isset($_SESSION["id"])) {
         $query2->execute(array($_POST['idPost']));
 
         /*header("Location:index.php?action=mur");*/
-        header("location:index.php?action=mur&id=" . $_POST['idMur']);
+        //header("location:index.php?action=mur&id=" . $_POST['idMur']);
+        header('Location: ' . $_SERVER['HTTP_REFERER'] );
 
     } else {
         echo "Vous n'avez pas écrit cette publication";
