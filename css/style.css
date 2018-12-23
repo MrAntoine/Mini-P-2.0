@@ -376,6 +376,7 @@ nav ul li a:hover {
 
 .postMsg:hover {
   color: #fff;
+    background-color: black;
 }
 
 .img_article img{
@@ -539,7 +540,7 @@ footer {
     outline: none;
     height: 40px;
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
 }
 .FormCGTDATA input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, textarea
 {
@@ -573,10 +574,7 @@ footer {
 .FormCGTDATA textarea {
   margin-bottom: 20px;
 }
-.FormCGTDATA a:hover
-{
-    /* color: #ffc107; */
-}
+
 
 .form1 {
   /* height: 550px; */
