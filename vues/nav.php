@@ -16,12 +16,12 @@
 
         <div class="menu" id="menu">
               <ul>
-                  <li class="searchbox">
-                      <form method="POST" action="index.php?action=searchProfile">
-                          <input type="text" name="search_profile" placeholder="Rechercher">
-                          <input type="submit" name="" value="GO !" id="searchGo">
-                      </form>
-                  </li>
+                <li class="searchbox">
+                  <form method="POST" action="index.php?action=searchProfile">
+                    <input type="text" name="search_profile" placeholder="Rechercher">
+                    <input type="submit" name="" value="GO !" id="searchGo">
+                  </form>
+                </li>
                 <li><a href="index.php?action=myProfile">Mon Profil</a></li>
                 <li><a href="index.php?action=mur">Mon Mur</a></li>
                 <li><a href="index.php?action=friends">Mes Amis</a></li>

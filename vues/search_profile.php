@@ -20,7 +20,7 @@ if(isset($_SESSION["id"])) {
     $query->execute(array($_POST['search_profile']));
 
     if ($_POST['search_profile'] == "") {
-        echo "<p class\"noUserText wrapper\">Désolé mais aucun membre n'est inscrit avec ce pseudo. <br/> Si vous connaissez cette personne vous pouvez lui suggérer de créer un compte.</p>";
+        echo "<p class=\"noUserText wrapper\">Désolé mais aucun membre n'est inscrit avec ce pseudo. <br/> Si vous connaissez cette personne vous pouvez lui suggérer de créer un compte.</p>";
     } else {
         echo "<div class=\"userList wrapper\">Liste des utilisateurs : <br/>";
         while ($line = $query->fetch()) {
